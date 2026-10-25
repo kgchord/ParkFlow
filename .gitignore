@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.frd
+*.tmp
+*.bak
+.DS_Store
+# regenerated reference meshes used only to cross-check STEP files
+cad/step/_ref/
+# KiCad backups / lock files
+*-backups/
+*.lck
+_autosave-*
+fp-info-cache
+firmware/lane_controller/build/
