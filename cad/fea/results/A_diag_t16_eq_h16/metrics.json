@@ -1,0 +1,114 @@
+{
+ "tag": "A_diag_t16_eq_h16",
+ "direction": "diag",
+ "plate_t": 16.0,
+ "nodes": 27882,
+ "elements": 13792,
+ "elements_weldment": 8467,
+ "quality_min_SICN": 0.06862060604948433,
+ "quality_mean_SICN": 0.682852681801222,
+ "weldment_raw_max": 482.74876852135,
+ "weldment_raw_xyz": [
+  -46.5,
+  3.0,
+  135.8
+ ],
+ "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+ "weldment_raw_region": "socket cheek",
+ "weldment_design_max": 106.06797625190838,
+ "weldment_design_xyz": [
+  36.5,
+  40.5,
+  158.5
+ ],
+ "weldment_design_feature": "socket inner corner (4.0 mm)",
+ "weldment_design_region": "socket cheek",
+ "regions": {
+  "base plate": {
+   "raw_max": 145.65143889222756,
+   "raw_xyz": [
+    -46.9,
+    -42.2,
+    16.0
+   ],
+   "raw_feature": "plate-socket weld toe (0.4 mm)",
+   "design_max": 54.34941749730652,
+   "design_xyz": [
+    62.8,
+    61.7,
+    0.0
+   ],
+   "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+  },
+  "gusset": {
+   "raw_max": 93.66693121315548,
+   "raw_xyz": [
+    -47.9,
+    1.5,
+    136.0
+   ],
+   "raw_feature": "gusset-cheek junction line (2.0 mm)",
+   "design_max": 47.28905561512092,
+   "design_xyz": [
+    -54.0,
+    3.0,
+    136.0
+   ],
+   "design_feature": "gusset-cheek junction line (7.5 mm)"
+  },
+  "socket cheek": {
+   "raw_max": 482.74876852135,
+   "raw_xyz": [
+    -46.5,
+    3.0,
+    135.8
+   ],
+   "raw_feature": "gusset-cheek junction line (0.0 mm)",
+   "design_max": 106.06797625190838,
+   "design_xyz": [
+    36.5,
+    40.5,
+    158.5
+   ],
+   "design_feature": "socket inner corner (4.0 mm)"
+  }
+ },
+ "excluded_node_fraction_weldment": 0.28841743119266056,
+ "pole_top_disp_along_wind_mm": 25.10931037398658,
+ "max_disp_mm": 25.122370992565568,
+ "disp_along_wind_at_socket_top_mm": 0.10858905673716888,
+ "bolt_reaction_N": [
+  [
+   -734.8801749999999,
+   -754.5151940000001,
+   -7002.071192
+  ],
+  [
+   2.2574296999999976e-13,
+   8.015111100000002e-13,
+   -212.44998700000042
+  ],
+  [
+   1.4148662400000026e-12,
+   2.10332189e-12,
+   -394.25385059999985
+  ],
+  [
+   -8.303981000000135,
+   8.303981000000135,
+   7900.718418999999
+  ]
+ ],
+ "bolt_max_tension_kN": 7.002071192000001,
+ "bolt_max_compression_kN": 7.900718418999999,
+ "support_reaction_sum_N": [
+  -743.1841559999984,
+  -746.2112129999973,
+  291.94338939999875
+ ],
+ "pole_axial_stress_FE_solid_MPa": 13.1429,
+ "pole_axial_stress_equiv_extrusion_MPa": 40.249927248408966,
+ "pole_section_zc_mm": 600.0,
+ "hand_moment_at_zc_Nm": 810.2915039999999,
+ "hand_pole_stress_at_zc_MPa": 29.465145599999996
+}

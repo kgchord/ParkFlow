@@ -1,0 +1,2122 @@
+{
+ "A_diag_t12_eq_h11": {
+  "tag": "A_diag_t12_eq_h11",
+  "direction": "diag",
+  "plate_t": 16.0,
+  "nodes": 41639,
+  "elements": 21314,
+  "elements_weldment": 13021,
+  "quality_min_SICN": 0.0030557837240368867,
+  "quality_mean_SICN": 0.7512889689842875,
+  "weldment_raw_max": 595.267754225609,
+  "weldment_raw_xyz": [
+   45.9,
+   -2.5,
+   135.9
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.8 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 138.2111273269812,
+  "weldment_design_xyz": [
+   40.5,
+   36.9,
+   162.3
+  ],
+  "weldment_design_feature": "socket inner corner (3.6 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 181.65529272704939,
+    "raw_xyz": [
+     -41.3,
+     -46.9,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 90.55696389105385,
+    "design_xyz": [
+     61.7,
+     62.8,
+     4.0
+    ],
+    "design_feature": "plate bulk (12 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 280.61789672535144,
+    "raw_xyz": [
+     48.2,
+     -3.0,
+     134.2
+    ],
+    "raw_feature": "gusset-cheek junction line (1.7 mm)",
+    "design_max": 57.351816037745486,
+    "design_xyz": [
+     3.0,
+     -50.2,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (3.8 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 595.267754225609,
+    "raw_xyz": [
+     45.9,
+     -2.5,
+     135.9
+    ],
+    "raw_feature": "gusset-cheek junction line (0.8 mm)",
+    "design_max": 138.2111273269812,
+    "design_xyz": [
+     40.5,
+     36.9,
+     162.3
+    ],
+    "design_feature": "socket inner corner (3.6 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.2516881059262892,
+  "pole_top_disp_along_wind_mm": 25.630390217529882,
+  "max_disp_mm": 25.64358840460689,
+  "disp_along_wind_at_socket_top_mm": 0.14044345170934475,
+  "bolt_reaction_N": [
+   [
+    -774.5671129999996,
+    -714.8278950000006,
+    -7344.691442999998
+   ],
+   [
+    2.894089025e-12,
+    1.7341769280000001e-12,
+    -133.2151270000005
+   ],
+   [
+    -2.278656000000006e-13,
+    2.0127605879999995e-12,
+    -135.44123800000023
+   ],
+   [
+    30.23965899999967,
+    -30.23965899999967,
+    7905.294569999998
+   ]
+  ],
+  "bolt_max_tension_kN": 7.344691442999998,
+  "bolt_max_compression_kN": 7.905294569999998,
+  "support_reaction_sum_N": [
+   -744.3274539999969,
+   -745.067553999996,
+   291.9467619999977
+  ],
+  "pole_axial_stress_FE_solid_MPa": 13.3534,
+  "pole_axial_stress_equiv_extrusion_MPa": 40.89458023106806,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_diag_t16_eq_h11": {
+  "tag": "A_diag_t16_eq_h11",
+  "direction": "diag",
+  "plate_t": 16.0,
+  "nodes": 42753,
+  "elements": 22013,
+  "elements_weldment": 13679,
+  "quality_min_SICN": 0.04956265648333897,
+  "quality_mean_SICN": 0.7385778641222494,
+  "weldment_raw_max": 772.4377419592274,
+  "weldment_raw_xyz": [
+   46.5,
+   -3.0,
+   135.8
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 136.84156293575188,
+  "weldment_design_xyz": [
+   40.5,
+   36.9,
+   162.3
+  ],
+  "weldment_design_feature": "socket inner corner (3.6 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 194.05564124249184,
+    "raw_xyz": [
+     -42.2,
+     -46.9,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 52.31497619667286,
+    "design_xyz": [
+     62.8,
+     61.7,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 306.34615041770036,
+    "raw_xyz": [
+     47.8,
+     -1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 61.15759378044807,
+    "design_xyz": [
+     3.0,
+     -50.2,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (3.8 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 772.4377419592274,
+    "raw_xyz": [
+     46.5,
+     -3.0,
+     135.8
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 136.84156293575188,
+    "design_xyz": [
+     40.5,
+     36.9,
+     162.3
+    ],
+    "design_feature": "socket inner corner (3.6 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.22570112106809853,
+  "pole_top_disp_along_wind_mm": 25.212127373253082,
+  "max_disp_mm": 25.225268133425757,
+  "disp_along_wind_at_socket_top_mm": 0.11413415341701044,
+  "bolt_reaction_N": [
+   [
+    -770.5064499999999,
+    -718.8921531000001,
+    -7073.145050000001
+   ],
+   [
+    1.88571981e-12,
+    -1.0829579049999995e-12,
+    -258.2468399999997
+   ],
+   [
+    6.908060599999999e-13,
+    5.6741235e-13,
+    -253.2778959999997
+   ],
+   [
+    26.248948300000464,
+    -26.248948300000464,
+    7876.622947700001
+   ]
+  ],
+  "bolt_max_tension_kN": 7.073145050000001,
+  "bolt_max_compression_kN": 7.8766229477000005,
+  "support_reaction_sum_N": [
+   -744.2575016999979,
+   -745.1411014000006,
+   291.9531617000002
+  ],
+  "pole_axial_stress_FE_solid_MPa": 13.3604,
+  "pole_axial_stress_equiv_extrusion_MPa": 40.91601762241539,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_diag_t16_eq_h16": {
+  "tag": "A_diag_t16_eq_h16",
+  "direction": "diag",
+  "plate_t": 16.0,
+  "nodes": 27882,
+  "elements": 13792,
+  "elements_weldment": 8467,
+  "quality_min_SICN": 0.06862060604948433,
+  "quality_mean_SICN": 0.682852681801222,
+  "weldment_raw_max": 482.74876852135,
+  "weldment_raw_xyz": [
+   -46.5,
+   3.0,
+   135.8
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 106.06797625190838,
+  "weldment_design_xyz": [
+   36.5,
+   40.5,
+   158.5
+  ],
+  "weldment_design_feature": "socket inner corner (4.0 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 145.65143889222756,
+    "raw_xyz": [
+     -46.9,
+     -42.2,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 54.34941749730652,
+    "design_xyz": [
+     62.8,
+     61.7,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 93.66693121315548,
+    "raw_xyz": [
+     -47.9,
+     1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 47.28905561512092,
+    "design_xyz": [
+     -54.0,
+     3.0,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (7.5 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 482.74876852135,
+    "raw_xyz": [
+     -46.5,
+     3.0,
+     135.8
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 106.06797625190838,
+    "design_xyz": [
+     36.5,
+     40.5,
+     158.5
+    ],
+    "design_feature": "socket inner corner (4.0 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.28841743119266056,
+  "pole_top_disp_along_wind_mm": 25.10931037398658,
+  "max_disp_mm": 25.122370992565568,
+  "disp_along_wind_at_socket_top_mm": 0.10858905673716888,
+  "bolt_reaction_N": [
+   [
+    -734.8801749999999,
+    -754.5151940000001,
+    -7002.071192
+   ],
+   [
+    2.2574296999999976e-13,
+    8.015111100000002e-13,
+    -212.44998700000042
+   ],
+   [
+    1.4148662400000026e-12,
+    2.10332189e-12,
+    -394.25385059999985
+   ],
+   [
+    -8.303981000000135,
+    8.303981000000135,
+    7900.718418999999
+   ]
+  ],
+  "bolt_max_tension_kN": 7.002071192000001,
+  "bolt_max_compression_kN": 7.900718418999999,
+  "support_reaction_sum_N": [
+   -743.1841559999984,
+   -746.2112129999973,
+   291.94338939999875
+  ],
+  "pole_axial_stress_FE_solid_MPa": 13.1429,
+  "pole_axial_stress_equiv_extrusion_MPa": 40.249927248408966,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_diag_t16_eq_h8": {
+  "tag": "A_diag_t16_eq_h8",
+  "direction": "diag",
+  "plate_t": 16.0,
+  "nodes": 71375,
+  "elements": 39127,
+  "elements_weldment": 24715,
+  "quality_min_SICN": 0.010478118431832304,
+  "quality_mean_SICN": 0.7952100560867355,
+  "weldment_raw_max": 460.6485285371918,
+  "weldment_raw_xyz": [
+   -46.5,
+   3.0,
+   136.0
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 131.69314776032655,
+  "weldment_design_xyz": [
+   39.4,
+   46.5,
+   166.0
+  ],
+  "weldment_design_feature": "socket top rim (pole bearing / contact edge) (6.0 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 185.72176773466595,
+    "raw_xyz": [
+     -46.9,
+     -42.2,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 50.44050222532975,
+    "design_xyz": [
+     60.9,
+     64.1,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 142.23115575909765,
+    "raw_xyz": [
+     47.8,
+     1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 89.57711946196187,
+    "design_xyz": [
+     3.0,
+     50.2,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (3.8 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 460.6485285371918,
+    "raw_xyz": [
+     -46.5,
+     3.0,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 131.69314776032655,
+    "design_xyz": [
+     39.4,
+     46.5,
+     166.0
+    ],
+    "design_feature": "socket top rim (pole bearing / contact edge) (6.0 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.1909661815250138,
+  "pole_top_disp_along_wind_mm": 25.196019113449452,
+  "max_disp_mm": 25.209023579369852,
+  "disp_along_wind_at_socket_top_mm": 0.1144943010052764,
+  "bolt_reaction_N": [
+   [
+    -746.5667625999998,
+    -742.8289450999998,
+    -6997.6496400000005
+   ],
+   [
+    -1.8705014899999997e-12,
+    7.91293599999998e-14,
+    -300.3011690000004
+   ],
+   [
+    -1.3321738500000002e-12,
+    2.00711975e-12,
+    -239.32253000000026
+   ],
+   [
+    1.1064829999998729,
+    -1.1064829999998729,
+    7829.2256480000015
+   ]
+  ],
+  "bolt_max_tension_kN": 6.997649640000001,
+  "bolt_max_compression_kN": 7.829225648000001,
+  "support_reaction_sum_N": [
+   -745.4602796000021,
+   -743.9354280999971,
+   291.95230900000286
+  ],
+  "pole_axial_stress_FE_solid_MPa": 13.1481,
+  "pole_axial_stress_equiv_extrusion_MPa": 40.26585216769556,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_face_t16_eq_h11": {
+  "tag": "A_face_t16_eq_h11",
+  "direction": "face",
+  "plate_t": 16.0,
+  "nodes": 42753,
+  "elements": 22013,
+  "elements_weldment": 13679,
+  "quality_min_SICN": 0.04956265648333897,
+  "quality_mean_SICN": 0.7385778641222494,
+  "weldment_raw_max": 880.472031171161,
+  "weldment_raw_xyz": [
+   46.5,
+   -3.0,
+   135.8
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 118.56342220233107,
+  "weldment_design_xyz": [
+   35.2,
+   -40.5,
+   159.8
+  ],
+  "weldment_design_feature": "socket inner corner (5.3 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 186.4055919484713,
+    "raw_xyz": [
+     -42.2,
+     46.9,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 45.84588502764016,
+    "design_xyz": [
+     65.6,
+     -60.4,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 360.70291690209547,
+    "raw_xyz": [
+     47.8,
+     -1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 47.405389843643846,
+    "design_xyz": [
+     54.0,
+     0.0,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (8.1 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 880.472031171161,
+    "raw_xyz": [
+     46.5,
+     -3.0,
+     135.8
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 118.56342220233107,
+    "design_xyz": [
+     35.2,
+     -40.5,
+     159.8
+    ],
+    "design_feature": "socket inner corner (5.3 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.22570112106809853,
+  "pole_top_disp_along_wind_mm": 25.21476623376623,
+  "max_disp_mm": 25.222268887047793,
+  "disp_along_wind_at_socket_top_mm": 0.11393598769230769,
+  "bolt_reaction_N": [
+   [
+    -784.5588540000002,
+    -269.09102520100004,
+    -5179.236703000001
+   ],
+   [
+    8.66286719999996e-14,
+    -1.611785680000001e-12,
+    -5136.315675999998
+   ],
+   [
+    -2.5890403999999997e-13,
+    -2.7925873599999997e-12,
+    5238.081894999999
+   ],
+   [
+    -268.60457700000006,
+    268.60457700000006,
+    5369.420130000001
+   ]
+  ],
+  "bolt_max_tension_kN": 5.179236703000002,
+  "bolt_max_compression_kN": 5.369420130000002,
+  "support_reaction_sum_N": [
+   -1053.163431,
+   -0.486448201004265,
+   291.9496459999982
+  ],
+  "pole_axial_stress_FE_solid_MPa": 9.95639,
+  "pole_axial_stress_equiv_extrusion_MPa": 30.491289833810395,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_face_t16_eq_h16": {
+  "tag": "A_face_t16_eq_h16",
+  "direction": "face",
+  "plate_t": 16.0,
+  "nodes": 27882,
+  "elements": 13792,
+  "elements_weldment": 8467,
+  "quality_min_SICN": 0.06862060604948433,
+  "quality_mean_SICN": 0.682852681801222,
+  "weldment_raw_max": 402.3622182594061,
+  "weldment_raw_xyz": [
+   -46.5,
+   3.0,
+   135.8
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 119.54783534758964,
+  "weldment_design_xyz": [
+   36.5,
+   -40.5,
+   158.5
+  ],
+  "weldment_design_feature": "socket inner corner (4.0 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 144.67723920665614,
+    "raw_xyz": [
+     -46.9,
+     42.2,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 50.480627474872975,
+    "design_xyz": [
+     65.6,
+     -60.4,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 95.22999049721375,
+    "raw_xyz": [
+     48.2,
+     3.0,
+     124.8
+    ],
+    "raw_feature": "gusset-cheek junction line (1.8 mm)",
+    "design_max": 48.433354996190204,
+    "design_xyz": [
+     51.1,
+     3.0,
+     113.7
+    ],
+    "design_feature": "gusset-cheek junction line (4.6 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 402.3622182594061,
+    "raw_xyz": [
+     -46.5,
+     3.0,
+     135.8
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 119.54783534758964,
+    "design_xyz": [
+     36.5,
+     -40.5,
+     158.5
+    ],
+    "design_feature": "socket inner corner (4.0 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.28841743119266056,
+  "pole_top_disp_along_wind_mm": 25.183827272727278,
+  "max_disp_mm": 25.191359342085715,
+  "disp_along_wind_at_socket_top_mm": 0.1102451387283237,
+  "bolt_reaction_N": [
+   [
+    -755.2093527000001,
+    -298.39858799999956,
+    -5206.31553
+   ],
+   [
+    3.4953551000000016e-13,
+    1.160544778e-12,
+    -5038.799241799998
+   ],
+   [
+    -3.8499807199999995e-12,
+    7.090192300000013e-13,
+    5169.895634
+   ],
+   [
+    -297.95257800000013,
+    297.95257800000013,
+    5367.156040000001
+   ]
+  ],
+  "bolt_max_tension_kN": 5.2063155299999995,
+  "bolt_max_compression_kN": 5.367156040000001,
+  "support_reaction_sum_N": [
+   -1053.1619307000037,
+   -0.4460099999981537,
+   291.93690220000144
+  ],
+  "pole_axial_stress_FE_solid_MPa": 9.87967,
+  "pole_axial_stress_equiv_extrusion_MPa": 30.256336024643623,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_face_t16_eq_h8": {
+  "tag": "A_face_t16_eq_h8",
+  "direction": "face",
+  "plate_t": 16.0,
+  "nodes": 71375,
+  "elements": 39127,
+  "elements_weldment": 24715,
+  "quality_min_SICN": 0.010478118431832304,
+  "quality_mean_SICN": 0.7952100560867355,
+  "weldment_raw_max": 694.4057412864038,
+  "weldment_raw_xyz": [
+   46.5,
+   2.6,
+   136.0
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.4 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 140.4785962249139,
+  "weldment_design_xyz": [
+   35.8,
+   -40.5,
+   161.2
+  ],
+  "weldment_design_feature": "socket inner corner (4.7 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 171.98671299834268,
+    "raw_xyz": [
+     -46.9,
+     -42.2,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 45.79232294495334,
+    "design_xyz": [
+     67.2,
+     -60.2,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 210.42884012857814,
+    "raw_xyz": [
+     47.8,
+     1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 54.3978611595263,
+    "design_xyz": [
+     54.0,
+     -3.0,
+     136.0
+    ],
+    "design_feature": "gusset-cheek junction line (7.5 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 694.4057412864038,
+    "raw_xyz": [
+     46.5,
+     2.6,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (0.4 mm)",
+    "design_max": 140.4785962249139,
+    "design_xyz": [
+     35.8,
+     -40.5,
+     161.2
+    ],
+    "design_feature": "socket inner corner (4.7 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.1909661815250138,
+  "pole_top_disp_along_wind_mm": 25.25672467532467,
+  "max_disp_mm": 25.264108112737507,
+  "disp_along_wind_at_socket_top_mm": 0.11499358659217877,
+  "bolt_reaction_N": [
+   [
+    -761.6570663999996,
+    -292.35250800000006,
+    -5158.7794697
+   ],
+   [
+    1.8540360099999997e-13,
+    -7.27293066e-13,
+    -5172.69937
+   ],
+   [
+    1.4292101999999965e-13,
+    -6.339605799999997e-13,
+    5232.159972
+   ],
+   [
+    -291.50940900000023,
+    291.50940900000023,
+    5391.262200000003
+   ]
+  ],
+  "bolt_max_tension_kN": 5.17269937,
+  "bolt_max_compression_kN": 5.391262200000003,
+  "support_reaction_sum_N": [
+   -1053.1664754000005,
+   -0.8430990000017708,
+   291.9433323000013
+  ],
+  "pole_axial_stress_FE_solid_MPa": 9.92528,
+  "pole_axial_stress_equiv_extrusion_MPa": 30.39601594169389,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "A_face_t16_solid_h11": {
+  "tag": "A_face_t16_solid_h11",
+  "direction": "face",
+  "plate_t": 16.0,
+  "nodes": 42753,
+  "elements": 22013,
+  "elements_weldment": 13679,
+  "quality_min_SICN": 0.04956265648333897,
+  "quality_mean_SICN": 0.7385778641222494,
+  "weldment_raw_max": 824.9273946628756,
+  "weldment_raw_xyz": [
+   46.5,
+   -3.0,
+   135.8
+  ],
+  "weldment_raw_feature": "gusset-cheek junction line (0.0 mm)",
+  "weldment_raw_region": "socket cheek",
+  "weldment_design_max": 99.10361762398986,
+  "weldment_design_xyz": [
+   35.2,
+   -40.5,
+   159.8
+  ],
+  "weldment_design_feature": "socket inner corner (5.3 mm)",
+  "weldment_design_region": "socket cheek",
+  "regions": {
+   "base plate": {
+    "raw_max": 190.41116693875915,
+    "raw_xyz": [
+     -42.2,
+     46.9,
+     16.0
+    ],
+    "raw_feature": "plate-socket weld toe (0.4 mm)",
+    "design_max": 46.25026199168305,
+    "design_xyz": [
+     -67.2,
+     60.2,
+     0.0
+    ],
+    "design_feature": "plate bulk (16 mm from nearest weld/constraint feature anchor washer edge)"
+   },
+   "gusset": {
+    "raw_max": 333.48186695089015,
+    "raw_xyz": [
+     47.8,
+     -1.5,
+     136.0
+    ],
+    "raw_feature": "gusset-cheek junction line (2.0 mm)",
+    "design_max": 48.99826945532059,
+    "design_xyz": [
+     3.0,
+     -50.8,
+     52.1
+    ],
+    "design_feature": "gusset-cheek junction line (4.3 mm)"
+   },
+   "socket cheek": {
+    "raw_max": 824.9273946628756,
+    "raw_xyz": [
+     46.5,
+     -3.0,
+     135.8
+    ],
+    "raw_feature": "gusset-cheek junction line (0.0 mm)",
+    "design_max": 99.10361762398986,
+    "design_xyz": [
+     35.2,
+     -40.5,
+     159.8
+    ],
+    "design_feature": "socket inner corner (5.3 mm)"
+   }
+  },
+  "excluded_node_fraction_weldment": 0.22570112106809853,
+  "pole_top_disp_along_wind_mm": 9.347194935064937,
+  "max_disp_mm": 9.35009586655383,
+  "disp_along_wind_at_socket_top_mm": 0.096948096,
+  "bolt_reaction_N": [
+   [
+    -783.9381320000001,
+    -269.9593519999999,
+    -5164.751568999999
+   ],
+   [
+    7.017187120000001e-13,
+    -4.022303499999992e-13,
+    -5128.981950000002
+   ],
+   [
+    6.96409882000001e-13,
+    -2.208279200000009e-13,
+    5217.202913000001
+   ],
+   [
+    -269.22294509999995,
+    269.22294509999995,
+    5368.487743000002
+   ]
+  ],
+  "bolt_max_tension_kN": 5.164751568999999,
+  "bolt_max_compression_kN": 5.368487743000002,
+  "support_reaction_sum_N": [
+   -1053.161077099998,
+   -0.7364069000011852,
+   291.9571369999991
+  ],
+  "pole_axial_stress_FE_solid_MPa": 9.96122,
+  "pole_axial_stress_equiv_extrusion_MPa": 9.96122,
+  "pole_section_zc_mm": 600.0,
+  "hand_moment_at_zc_Nm": 810.2915039999999,
+  "hand_pole_stress_at_zc_MPa": 29.465145599999996
+ },
+ "B_arm_h4": {
+  "tag": "B_arm_h4",
+  "support": "arm",
+  "h": 4.0,
+  "nodes": 208617,
+  "elements": 110471,
+  "quality_min_SICN": 0.0200980104230613,
+  "quality_mean_SICN": 0.7753218028606729,
+  "quality_n_SICN_below_0p1": 7,
+  "regions": {
+   "yoke": {
+    "raw_max": 31.725847907753387,
+    "raw_xyz": [
+     131.3,
+     19.7,
+     159.9
+    ],
+    "raw_feature": "yoke body",
+    "design_max": 15.753697262509489,
+    "design_xyz": [
+     130.7,
+     29.3,
+     155.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 31.91709782181801,
+    "raw_xyz": [
+     -52.7,
+     -19.9,
+     -62.4
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 18.477220298646117,
+    "design_xyz": [
+     67.7,
+     -22.1,
+     -70.8
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 31.91709782181801,
+  "raw_xyz": [
+   -52.7,
+   -19.9,
+   -62.4
+  ],
+  "raw_part": "tilt plate",
+  "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+  "design_max": 18.477220298646117,
+  "design_xyz": [
+   67.7,
+   -22.1,
+   -70.8
+  ],
+  "design_part": "tilt plate",
+  "design_feature": "tilt plate body",
+  "yoke_bend_root_max": 14.797130911104457,
+  "yoke_bend_root_xyz": [
+   134.9,
+   -14.6,
+   150.9
+  ],
+  "excluded_node_fraction": 0.27753801375018816,
+  "reader_cg_disp_mm": [
+   -0.068206,
+   0.0912001,
+   0.00165931
+  ],
+  "reader_cg_disp_mag_mm": 0.11389587343572243,
+  "max_disp_mm": 0.3374241140956721,
+  "support_reaction_sum_N": [
+   0.00010558357438839039,
+   -116.47630592430589,
+   29.43010020981373
+  ]
+ },
+ "B_arm_h6": {
+  "tag": "B_arm_h6",
+  "support": "arm",
+  "h": 6.0,
+  "nodes": 83784,
+  "elements": 41729,
+  "quality_min_SICN": 0.014174608797297183,
+  "quality_mean_SICN": 0.7814040330854114,
+  "quality_n_SICN_below_0p1": 43,
+  "regions": {
+   "yoke": {
+    "raw_max": 24.70145784748949,
+    "raw_xyz": [
+     132.5,
+     19.3,
+     159.7
+    ],
+    "raw_feature": "yoke body",
+    "design_max": 14.822917837766457,
+    "design_xyz": [
+     -130.9,
+     29.0,
+     154.9
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 28.088595809728545,
+    "raw_xyz": [
+     52.7,
+     -19.8,
+     -62.5
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 18.117110966304754,
+    "design_xyz": [
+     68.0,
+     -22.0,
+     -71.0
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 28.088595809728545,
+  "raw_xyz": [
+   52.7,
+   -19.8,
+   -62.5
+  ],
+  "raw_part": "tilt plate",
+  "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+  "design_max": 18.117110966304754,
+  "design_xyz": [
+   68.0,
+   -22.0,
+   -71.0
+  ],
+  "design_part": "tilt plate",
+  "design_feature": "tilt plate body",
+  "yoke_bend_root_max": 13.990876840597268,
+  "yoke_bend_root_xyz": [
+   134.9,
+   -11.2,
+   151.2
+  ],
+  "excluded_node_fraction": 0.24891387999304884,
+  "reader_cg_disp_mm": [
+   -0.0677165,
+   0.0894108,
+   0.0016093
+  ],
+  "reader_cg_disp_mag_mm": 0.11217132153710234,
+  "max_disp_mm": 0.33309165049710054,
+  "support_reaction_sum_N": [
+   -0.0003644719209098704,
+   -116.47618255035005,
+   29.429842428658873
+  ]
+ },
+ "B_arm_h6_freq": {
+  "tag": "B_arm_h6_freq",
+  "h": 6.0,
+  "elements": 41729,
+  "nodes": 83784,
+  "freq_Hz": [
+   35.92922,
+   61.46724,
+   88.77077,
+   218.2412,
+   365.3849,
+   393.146,
+   467.4464,
+   502.2576
+  ],
+  "f1_Hz": 35.92922
+ },
+ "B_arm_h8": {
+  "tag": "B_arm_h8",
+  "support": "arm",
+  "h": 8.0,
+  "nodes": 51335,
+  "elements": 25209,
+  "quality_min_SICN": 0.013969235034393448,
+  "quality_mean_SICN": 0.7759970909249825,
+  "quality_n_SICN_below_0p1": 37,
+  "regions": {
+   "yoke": {
+    "raw_max": 20.023271793306684,
+    "raw_xyz": [
+     -130.0,
+     18.8,
+     155.0
+    ],
+    "raw_feature": "yoke body",
+    "design_max": 13.455355198387162,
+    "design_xyz": [
+     -128.5,
+     28.7,
+     155.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 25.351035980010757,
+    "raw_xyz": [
+     -53.0,
+     -24.8,
+     -63.6
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 19.109050039379248,
+    "design_xyz": [
+     68.7,
+     -21.9,
+     -71.3
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 25.351035980010757,
+  "raw_xyz": [
+   -53.0,
+   -24.8,
+   -63.6
+  ],
+  "raw_part": "tilt plate",
+  "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+  "design_max": 19.109050039379248,
+  "design_xyz": [
+   68.7,
+   -21.9,
+   -71.3
+  ],
+  "design_part": "tilt plate",
+  "design_feature": "tilt plate body",
+  "yoke_bend_root_max": 12.908576897782652,
+  "yoke_bend_root_xyz": [
+   -135.0,
+   -15.0,
+   150.0
+  ],
+  "excluded_node_fraction": 0.25269036360671776,
+  "reader_cg_disp_mm": [
+   -0.0668814,
+   0.0836606,
+   0.00156862
+  ],
+  "reader_cg_disp_mag_mm": 0.10711992450998273,
+  "max_disp_mm": 0.3212011304155625,
+  "support_reaction_sum_N": [
+   -0.0007271005200038224,
+   -116.47609041572,
+   29.430114666097747
+  ]
+ },
+ "B_contact_h5": {
+  "tag": "B_contact_h5",
+  "support": "contact",
+  "h": 5.0,
+  "nodes": 129206,
+  "elements": 65581,
+  "quality_min_SICN": 0.008139913308797812,
+  "quality_mean_SICN": 0.7776942962436063,
+  "quality_n_SICN_below_0p1": 47,
+  "regions": {
+   "yoke": {
+    "raw_max": 129.16383209140824,
+    "raw_xyz": [
+     -86.3,
+     -0.9,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.4 mm)",
+    "design_max": 43.37289318704829,
+    "design_xyz": [
+     134.9,
+     -26.9,
+     151.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 28.700689039768488,
+    "raw_xyz": [
+     52.9,
+     -19.9,
+     -62.2
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 17.470179798022375,
+    "design_xyz": [
+     -68.0,
+     -17.3,
+     -69.3
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 129.16383209140824,
+  "raw_xyz": [
+   -86.3,
+   -0.9,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.4 mm)",
+  "design_max": 43.37289318704829,
+  "design_xyz": [
+   134.9,
+   -26.9,
+   151.0
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke body",
+  "yoke_bend_root_max": 43.37289318704829,
+  "yoke_bend_root_xyz": [
+   134.9,
+   -26.9,
+   151.0
+  ],
+  "excluded_node_fraction": 0.1925232325193494,
+  "reader_cg_disp_mm": [
+   -0.0454959,
+   0.995998,
+   -0.12518
+  ],
+  "reader_cg_disp_mag_mm": 1.0048641327666195,
+  "max_disp_mm": 1.938469003007589,
+  "support_reaction_sum_N": [
+   0.00022210000007660824,
+   -116.47606589999994,
+   1428.9237181975066
+  ]
+ },
+ "B_contact_h6": {
+  "tag": "B_contact_h6",
+  "support": "contact",
+  "h": 6.0,
+  "nodes": 91611,
+  "elements": 45551,
+  "quality_min_SICN": 0.01672247499090514,
+  "quality_mean_SICN": 0.7893436046109507,
+  "quality_n_SICN_below_0p1": 28,
+  "regions": {
+   "yoke": {
+    "raw_max": 131.4726021278578,
+    "raw_xyz": [
+     -86.1,
+     -2.5,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.6 mm)",
+    "design_max": 40.76821795526634,
+    "design_xyz": [
+     -135.0,
+     -30.0,
+     150.0
+    ],
+    "design_feature": "yoke bend root (web-cheek, R5/R10) (0.0 mm)"
+   },
+   "tilt plate": {
+    "raw_max": 27.06725001450831,
+    "raw_xyz": [
+     52.7,
+     -19.8,
+     -62.5
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 17.250792827829386,
+    "design_xyz": [
+     -68.0,
+     -17.3,
+     -69.3
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 131.4726021278578,
+  "raw_xyz": [
+   -86.1,
+   -2.5,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.6 mm)",
+  "design_max": 40.76821795526634,
+  "design_xyz": [
+   -135.0,
+   -30.0,
+   150.0
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke bend root (web-cheek, R5/R10) (0.0 mm)",
+  "yoke_bend_root_max": 40.76821795526634,
+  "yoke_bend_root_xyz": [
+   -135.0,
+   -30.0,
+   150.0
+  ],
+  "excluded_node_fraction": 0.18212143928035981,
+  "reader_cg_disp_mm": [
+   -0.0463048,
+   0.984867,
+   -0.123848
+  ],
+  "reader_cg_disp_mag_mm": 0.9937029079639649,
+  "max_disp_mm": 1.9209855556965618,
+  "support_reaction_sum_N": [
+   0.0018502999999263636,
+   -116.47603230000017,
+   1432.4062940007486
+  ]
+ },
+ "B_contact_h8": {
+  "tag": "B_contact_h8",
+  "support": "contact",
+  "h": 8.0,
+  "nodes": 56830,
+  "elements": 27816,
+  "quality_min_SICN": 0.013969235034393448,
+  "quality_mean_SICN": 0.775831864667666,
+  "quality_n_SICN_below_0p1": 37,
+  "regions": {
+   "yoke": {
+    "raw_max": 101.12327744495825,
+    "raw_xyz": [
+     -84.3,
+     -5.3,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.8 mm)",
+    "design_max": 41.66766771868807,
+    "design_xyz": [
+     134.8,
+     -26.9,
+     151.3
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 25.052897803321514,
+    "raw_xyz": [
+     -53.0,
+     -20.1,
+     -61.9
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 17.829587793844954,
+    "design_xyz": [
+     -68.7,
+     -17.2,
+     -69.6
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 101.12327744495825,
+  "raw_xyz": [
+   -84.3,
+   -5.3,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.8 mm)",
+  "design_max": 41.66766771868807,
+  "design_xyz": [
+   134.8,
+   -26.9,
+   151.3
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke body",
+  "yoke_bend_root_max": 41.66766771868807,
+  "yoke_bend_root_xyz": [
+   134.8,
+   -26.9,
+   151.3
+  ],
+  "excluded_node_fraction": 0.19038979042648618,
+  "reader_cg_disp_mm": [
+   -0.0463309,
+   0.982052,
+   -0.123575
+  ],
+  "reader_cg_disp_mag_mm": 0.9908801459428935,
+  "max_disp_mm": 1.913314636966077,
+  "support_reaction_sum_N": [
+   -0.0002039999998029174,
+   -116.47629460000013,
+   1430.6809970022025
+  ]
+ },
+ "B_washer_h4": {
+  "tag": "B_washer_h4",
+  "support": "washer",
+  "h": 4.0,
+  "nodes": 208617,
+  "elements": 110471,
+  "quality_min_SICN": 0.0200980104230613,
+  "quality_mean_SICN": 0.7753218028606729,
+  "quality_n_SICN_below_0p1": 7,
+  "regions": {
+   "yoke": {
+    "raw_max": 160.01178044281613,
+    "raw_xyz": [
+     -83.6,
+     -5.2,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.4 mm)",
+    "design_max": 51.59719532234146,
+    "design_xyz": [
+     94.9,
+     -0.4,
+     155.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 33.71451742694829,
+    "raw_xyz": [
+     -52.7,
+     -19.9,
+     -62.4
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 19.78730969073613,
+    "design_xyz": [
+     67.7,
+     -22.1,
+     -70.8
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 160.01178044281613,
+  "raw_xyz": [
+   -83.6,
+   -5.2,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.4 mm)",
+  "design_max": 51.59719532234146,
+  "design_xyz": [
+   94.9,
+   -0.4,
+   155.0
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke body",
+  "yoke_bend_root_max": 48.562492276460645,
+  "yoke_bend_root_xyz": [
+   -134.1,
+   -27.2,
+   152.9
+  ],
+  "excluded_node_fraction": 0.1583981532593968,
+  "reader_cg_disp_mm": [
+   -0.0893011,
+   1.61969,
+   0.0097109
+  ],
+  "reader_cg_disp_mag_mm": 1.6221789926330634,
+  "max_disp_mm": 3.0694106532465852,
+  "support_reaction_sum_N": [
+   -8.9100000138842e-05,
+   -116.47643840000076,
+   29.430577999999795
+  ]
+ },
+ "B_washer_h6": {
+  "tag": "B_washer_h6",
+  "support": "washer",
+  "h": 6.0,
+  "nodes": 83784,
+  "elements": 41729,
+  "quality_min_SICN": 0.014174608797297183,
+  "quality_mean_SICN": 0.7814040330854115,
+  "quality_n_SICN_below_0p1": 43,
+  "regions": {
+   "yoke": {
+    "raw_max": 137.02007591802013,
+    "raw_xyz": [
+     82.1,
+     -6.4,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.7 mm)",
+    "design_max": 51.43881144325631,
+    "design_xyz": [
+     95.0,
+     -0.2,
+     155.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 29.304541715130096,
+    "raw_xyz": [
+     52.7,
+     -19.8,
+     -62.5
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 19.581116871215492,
+    "design_xyz": [
+     -68.0,
+     -22.0,
+     -71.0
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 137.02007591802013,
+  "raw_xyz": [
+   82.1,
+   -6.4,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.7 mm)",
+  "design_max": 51.43881144325631,
+  "design_xyz": [
+   95.0,
+   -0.2,
+   155.0
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke body",
+  "yoke_bend_root_max": 44.14094820018143,
+  "yoke_bend_root_xyz": [
+   -134.5,
+   -26.7,
+   152.1
+  ],
+  "excluded_node_fraction": 0.13879993048831957,
+  "reader_cg_disp_mm": [
+   -0.0922112,
+   1.59683,
+   0.0141006
+  ],
+  "reader_cg_disp_mag_mm": 1.5995523690163445,
+  "max_disp_mm": 3.032870548703733,
+  "support_reaction_sum_N": [
+   0.0011370000002415281,
+   -116.47667649999957,
+   29.429869000000963
+  ]
+ },
+ "B_washer_h8": {
+  "tag": "B_washer_h8",
+  "support": "washer",
+  "h": 8.0,
+  "nodes": 51335,
+  "elements": 25209,
+  "quality_min_SICN": 0.013969235034393448,
+  "quality_mean_SICN": 0.7759970909249825,
+  "quality_n_SICN_below_0p1": 37,
+  "regions": {
+   "yoke": {
+    "raw_max": 110.54056985428473,
+    "raw_xyz": [
+     -84.3,
+     -5.3,
+     160.0
+    ],
+    "raw_feature": "web washer support edge (0.8 mm)",
+    "design_max": 51.23972327241529,
+    "design_xyz": [
+     -94.7,
+     -1.6,
+     155.0
+    ],
+    "design_feature": "yoke body"
+   },
+   "tilt plate": {
+    "raw_max": 26.80417113528228,
+    "raw_xyz": [
+     -53.0,
+     -24.8,
+     -63.6
+    ],
+    "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+    "design_max": 20.49186736503289,
+    "design_xyz": [
+     68.7,
+     -21.9,
+     -71.3
+    ],
+    "design_feature": "tilt plate body"
+   }
+  },
+  "raw_max": 110.54056985428473,
+  "raw_xyz": [
+   -84.3,
+   -5.3,
+   160.0
+  ],
+  "raw_part": "yoke",
+  "raw_feature": "web washer support edge (0.8 mm)",
+  "design_max": 51.23972327241529,
+  "design_xyz": [
+   -94.7,
+   -1.6,
+   155.0
+  ],
+  "design_part": "yoke",
+  "design_feature": "yoke body",
+  "yoke_bend_root_max": 43.36022255219984,
+  "yoke_bend_root_xyz": [
+   134.6,
+   -25.4,
+   151.9
+  ],
+  "excluded_node_fraction": 0.1475012228925485,
+  "reader_cg_disp_mm": [
+   -0.0841746,
+   1.59171,
+   0.00917015
+  ],
+  "reader_cg_disp_mag_mm": 1.5939605324587502,
+  "max_disp_mm": 3.0172519352648486,
+  "support_reaction_sum_N": [
+   0.00014300000015055048,
+   -116.47584439999994,
+   29.429169000000087
+  ]
+ },
+ "C_boom_horiz_s12": {
+  "tag": "C_boom_horiz_s12",
+  "mode": "horiz",
+  "s": 12.0,
+  "shell_elements": 1246,
+  "shell_nodes": 3766,
+  "nodes_in_frd_expanded": 10584,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999994847,
+    "mean": 0.9999999999998367
+   },
+   "gamma": {
+    "min": 0.9999999999999752,
+    "mean": 0.9999999999999967
+   }
+  },
+  "raw_max": 35.302723379377,
+  "raw_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 16.895953664200473,
+  "max_vm_beyond_xyz": [
+   266.5,
+   15.0,
+   -17.6
+  ],
+  "max_vm_clamp_edge_zone": 35.302723379377,
+  "clamp_edge_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 17.0432,
+  "sigma_beam_at_x265": 16.914849111857354,
+  "sigma_xx_max_at_x400_FE": 14.6456,
+  "sigma_beam_at_x400": 14.472598170573137,
+  "sigma_xx_max_at_x700_FE": 9.1814,
+  "sigma_beam_at_x700": 9.045373856608212,
+  "beam_M_at_XC_Nmm": 49750.0,
+  "beam_sigma_at_XC_MPa": 18.00029397465034,
+  "tip_disp_FE_mm": 6.010619,
+  "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+  "section_W_mm3": 2763.84375,
+  "max_disp_mm": 5.74616966013196
+ },
+ "C_boom_horiz_s20": {
+  "tag": "C_boom_horiz_s20",
+  "mode": "horiz",
+  "s": 20.0,
+  "shell_elements": 530,
+  "shell_nodes": 1610,
+  "nodes_in_frd_expanded": 4832,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999997012,
+    "mean": 0.9999999999999017
+   },
+   "gamma": {
+    "min": 0.999999999999985,
+    "mean": 0.9999999999999983
+   }
+  },
+  "raw_max": 34.33877525081839,
+  "raw_xyz": [
+   205.5,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 16.968318931000265,
+  "max_vm_beyond_xyz": [
+   265.8,
+   15.0,
+   -9.8
+  ],
+  "max_vm_clamp_edge_zone": 34.33877525081839,
+  "clamp_edge_xyz": [
+   205.5,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 16.9595,
+  "sigma_beam_at_x265": 16.914849111857354,
+  "sigma_xx_max_at_x400_FE": 14.6905,
+  "sigma_beam_at_x400": 14.472598170573137,
+  "sigma_xx_max_at_x700_FE": 9.18056,
+  "sigma_beam_at_x700": 9.045373856608212,
+  "beam_M_at_XC_Nmm": 49750.0,
+  "beam_sigma_at_XC_MPa": 18.00029397465034,
+  "tip_disp_FE_mm": 6.055753,
+  "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+  "section_W_mm3": 2763.84375,
+  "max_disp_mm": 5.789973420258509
+ },
+ "C_boom_horiz_s4": {
+  "tag": "C_boom_horiz_s4",
+  "mode": "horiz",
+  "s": 4.0,
+  "shell_elements": 11704,
+  "shell_nodes": 35200,
+  "nodes_in_frd_expanded": 87480,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999980541,
+    "mean": 0.9999999999995096
+   },
+   "gamma": {
+    "min": 0.9999999999999064,
+    "mean": 0.999999999999986
+   }
+  },
+  "raw_max": 61.508457026636584,
+  "raw_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 16.902542626577027,
+  "max_vm_beyond_xyz": [
+   265.2,
+   15.0,
+   -25.4
+  ],
+  "max_vm_clamp_edge_zone": 61.508457026636584,
+  "clamp_edge_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 17.0768,
+  "sigma_beam_at_x265": 16.914849111857354,
+  "sigma_xx_max_at_x400_FE": 14.6716,
+  "sigma_beam_at_x400": 14.472598170573137,
+  "sigma_xx_max_at_x700_FE": 9.19688,
+  "sigma_beam_at_x700": 9.045373856608212,
+  "beam_M_at_XC_Nmm": 49750.0,
+  "beam_sigma_at_XC_MPa": 18.00029397465034,
+  "tip_disp_FE_mm": 5.977265,
+  "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+  "section_W_mm3": 2763.84375,
+  "max_disp_mm": 5.7138068319725335
+ },
+ "C_boom_horiz_s6": {
+  "tag": "C_boom_horiz_s6",
+  "mode": "horiz",
+  "s": 6.0,
+  "shell_elements": 5340,
+  "shell_nodes": 16080,
+  "nodes_in_frd_expanded": 41102,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999987,
+    "mean": 0.9999999999996553
+   },
+   "gamma": {
+    "min": 0.9999999999999379,
+    "mean": 0.9999999999999911
+   }
+  },
+  "raw_max": 52.770132095352714,
+  "raw_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 16.884838919437357,
+  "max_vm_beyond_xyz": [
+   266.5,
+   15.0,
+   -23.4
+  ],
+  "max_vm_clamp_edge_zone": 52.770132095352714,
+  "clamp_edge_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 17.0486,
+  "sigma_beam_at_x265": 16.914849111857354,
+  "sigma_xx_max_at_x400_FE": 14.6821,
+  "sigma_beam_at_x400": 14.472598170573137,
+  "sigma_xx_max_at_x700_FE": 9.22458,
+  "sigma_beam_at_x700": 9.045373856608212,
+  "beam_M_at_XC_Nmm": 49750.0,
+  "beam_sigma_at_XC_MPa": 18.00029397465034,
+  "tip_disp_FE_mm": 5.959912,
+  "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+  "section_W_mm3": 2763.84375,
+  "max_disp_mm": 5.696965449077342
+ },
+ "C_boom_horiz_s8": {
+  "tag": "C_boom_horiz_s8",
+  "mode": "horiz",
+  "s": 8.0,
+  "shell_elements": 2926,
+  "shell_nodes": 8822,
+  "nodes_in_frd_expanded": 23264,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999991435,
+    "mean": 0.9999999999997494
+   },
+   "gamma": {
+    "min": 0.9999999999999589,
+    "mean": 0.9999999999999944
+   }
+  },
+  "raw_max": 40.53133588213339,
+  "raw_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 16.916393068287704,
+  "max_vm_beyond_xyz": [
+   265.2,
+   15.0,
+   -20.9
+  ],
+  "max_vm_clamp_edge_zone": 40.53133588213339,
+  "clamp_edge_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 17.0473,
+  "sigma_beam_at_x265": 16.914849111857354,
+  "sigma_xx_max_at_x400_FE": 14.6536,
+  "sigma_beam_at_x400": 14.472598170573137,
+  "sigma_xx_max_at_x700_FE": 9.1712,
+  "sigma_beam_at_x700": 9.045373856608212,
+  "beam_M_at_XC_Nmm": 49750.0,
+  "beam_sigma_at_XC_MPa": 18.00029397465034,
+  "tip_disp_FE_mm": 6.011085,
+  "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+  "section_W_mm3": 2763.84375,
+  "max_disp_mm": 5.746629606325434
+ },
+ "C_boom_vert_s12": {
+  "tag": "C_boom_vert_s12",
+  "mode": "vert",
+  "s": 12.0,
+  "shell_elements": 1246,
+  "shell_nodes": 3766,
+  "nodes_in_frd_expanded": 10584,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999994847,
+    "mean": 0.9999999999998367
+   },
+   "gamma": {
+    "min": 0.9999999999999752,
+    "mean": 0.9999999999999967
+   }
+  },
+  "raw_max": 16.319783961472165,
+  "raw_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 12.424168766811432,
+  "max_vm_beyond_xyz": [
+   266.5,
+   0.0,
+   -30.0
+  ],
+  "max_vm_clamp_edge_zone": 16.319783961472165,
+  "clamp_edge_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 12.5278,
+  "sigma_beam_at_x265": 12.406610282700875,
+  "sigma_xx_max_at_x400_FE": 10.6055,
+  "sigma_beam_at_x400": 10.524500582012681,
+  "sigma_xx_max_at_x700_FE": 6.52112,
+  "sigma_beam_at_x700": 6.45186036361755,
+  "beam_M_at_XC_Nmm": 54432.971533037504,
+  "beam_sigma_at_XC_MPa": 13.252949932529113,
+  "tip_disp_FE_mm": 2.114066,
+  "tip_disp_beam_clamped_at_XC_mm": 2.064733615219848,
+  "section_W_mm3": 4107.234375,
+  "max_disp_mm": 2.0223323362903645
+ },
+ "C_boom_vert_s20": {
+  "tag": "C_boom_vert_s20",
+  "mode": "vert",
+  "s": 20.0,
+  "shell_elements": 530,
+  "shell_nodes": 1610,
+  "nodes_in_frd_expanded": 4832,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999997012,
+    "mean": 0.9999999999999017
+   },
+   "gamma": {
+    "min": 0.999999999999985,
+    "mean": 0.9999999999999983
+   }
+  },
+  "raw_max": 17.369681926707894,
+  "raw_xyz": [
+   205.5,
+   -14.2,
+   -30.0
+  ],
+  "max_vm_beyond_XC_plus_60": 12.442470550130315,
+  "max_vm_beyond_xyz": [
+   265.8,
+   0.0,
+   -30.0
+  ],
+  "max_vm_clamp_edge_zone": 17.369681926707894,
+  "clamp_edge_xyz": [
+   205.5,
+   -14.2,
+   -30.0
+  ],
+  "sigma_xx_max_at_x265_FE": 12.4474,
+  "sigma_beam_at_x265": 12.406610282700875,
+  "sigma_xx_max_at_x400_FE": 10.6308,
+  "sigma_beam_at_x400": 10.524500582012681,
+  "sigma_xx_max_at_x700_FE": 6.51526,
+  "sigma_beam_at_x700": 6.45186036361755,
+  "beam_M_at_XC_Nmm": 54432.971533037504,
+  "beam_sigma_at_XC_MPa": 13.252949932529113,
+  "tip_disp_FE_mm": 2.137116,
+  "tip_disp_beam_clamped_at_XC_mm": 2.064733615219848,
+  "section_W_mm3": 4107.234375,
+  "max_disp_mm": 2.044700413157381
+ },
+ "C_boom_vert_s4": {
+  "tag": "C_boom_vert_s4",
+  "mode": "vert",
+  "s": 4.0,
+  "shell_elements": 11704,
+  "shell_nodes": 35200,
+  "nodes_in_frd_expanded": 87480,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999980541,
+    "mean": 0.9999999999995096
+   },
+   "gamma": {
+    "min": 0.9999999999999064,
+    "mean": 0.999999999999986
+   }
+  },
+  "raw_max": 28.249512004930725,
+  "raw_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 12.431688217753377,
+  "max_vm_beyond_xyz": [
+   265.2,
+   0.0,
+   -30.0
+  ],
+  "max_vm_clamp_edge_zone": 28.249512004930725,
+  "clamp_edge_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 12.5395,
+  "sigma_beam_at_x265": 12.406610282700875,
+  "sigma_xx_max_at_x400_FE": 10.6337,
+  "sigma_beam_at_x400": 10.524500582012681,
+  "sigma_xx_max_at_x700_FE": 6.5386,
+  "sigma_beam_at_x700": 6.45186036361755,
+  "beam_M_at_XC_Nmm": 54432.971533037504,
+  "beam_sigma_at_XC_MPa": 13.252949932529113,
+  "tip_disp_FE_mm": 2.101422,
+  "tip_disp_beam_clamped_at_XC_mm": 2.064733615219848,
+  "section_W_mm3": 4107.234375,
+  "max_disp_mm": 2.010058053597679
+ },
+ "C_boom_vert_s6": {
+  "tag": "C_boom_vert_s6",
+  "mode": "vert",
+  "s": 6.0,
+  "shell_elements": 5340,
+  "shell_nodes": 16080,
+  "nodes_in_frd_expanded": 41102,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999987,
+    "mean": 0.9999999999996553
+   },
+   "gamma": {
+    "min": 0.9999999999999379,
+    "mean": 0.9999999999999911
+   }
+  },
+  "raw_max": 24.12091376338407,
+  "raw_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 12.408351884158458,
+  "max_vm_beyond_xyz": [
+   266.5,
+   -0.0,
+   -30.0
+  ],
+  "max_vm_clamp_edge_zone": 24.12091376338407,
+  "clamp_edge_xyz": [
+   206.7,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 12.5211,
+  "sigma_beam_at_x265": 12.406610282700875,
+  "sigma_xx_max_at_x400_FE": 10.6372,
+  "sigma_beam_at_x400": 10.524500582012681,
+  "sigma_xx_max_at_x700_FE": 6.55609,
+  "sigma_beam_at_x700": 6.45186036361755,
+  "beam_M_at_XC_Nmm": 54432.971533037504,
+  "beam_sigma_at_XC_MPa": 13.252949932529113,
+  "tip_disp_FE_mm": 2.096023,
+  "tip_disp_beam_clamped_at_XC_mm": 2.064733615219848,
+  "section_W_mm3": 4107.234375,
+  "max_disp_mm": 2.004826173555506
+ },
+ "C_boom_vert_s8": {
+  "tag": "C_boom_vert_s8",
+  "mode": "vert",
+  "s": 8.0,
+  "shell_elements": 2926,
+  "shell_nodes": 8822,
+  "nodes_in_frd_expanded": 23264,
+  "quality": {
+   "minSJ": {
+    "min": 0.9999999999991435,
+    "mean": 0.9999999999997494
+   },
+   "gamma": {
+    "min": 0.9999999999999589,
+    "mean": 0.9999999999999944
+   }
+  },
+  "raw_max": 18.305806207831438,
+  "raw_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "max_vm_beyond_XC_plus_60": 12.428263745365186,
+  "max_vm_beyond_xyz": [
+   265.2,
+   -7.1,
+   -30.0
+  ],
+  "max_vm_clamp_edge_zone": 18.305806207831438,
+  "clamp_edge_xyz": [
+   205.1,
+   -15.0,
+   -29.2
+  ],
+  "sigma_xx_max_at_x265_FE": 12.5164,
+  "sigma_beam_at_x265": 12.406610282700875,
+  "sigma_xx_max_at_x400_FE": 10.61,
+  "sigma_beam_at_x400": 10.524500582012681,
+  "sigma_xx_max_at_x700_FE": 6.51341,
+  "sigma_beam_at_x700": 6.45186036361755,
+  "beam_M_at_XC_Nmm": 54432.971533037504,
+  "beam_sigma_at_XC_MPa": 13.252949932529113,
+  "tip_disp_FE_mm": 2.113281,
+  "tip_disp_beam_clamped_at_XC_mm": 2.064733615219848,
+  "section_W_mm3": 4107.234375,
+  "max_disp_mm": 2.021572046434065
+ }
+}

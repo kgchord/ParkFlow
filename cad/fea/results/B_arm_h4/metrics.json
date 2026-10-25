@@ -1,0 +1,79 @@
+{
+ "tag": "B_arm_h4",
+ "support": "arm",
+ "h": 4.0,
+ "nodes": 208617,
+ "elements": 110471,
+ "quality_min_SICN": 0.0200980104230613,
+ "quality_mean_SICN": 0.7753218028606729,
+ "quality_n_SICN_below_0p1": 7,
+ "regions": {
+  "yoke": {
+   "raw_max": 31.725847907753387,
+   "raw_xyz": [
+    131.3,
+    19.7,
+    159.9
+   ],
+   "raw_feature": "yoke body",
+   "design_max": 15.753697262509489,
+   "design_xyz": [
+    130.7,
+    29.3,
+    155.0
+   ],
+   "design_feature": "yoke body"
+  },
+  "tilt plate": {
+   "raw_max": 31.91709782181801,
+   "raw_xyz": [
+    -52.7,
+    -19.9,
+    -62.4
+   ],
+   "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+   "design_max": 18.477220298646117,
+   "design_xyz": [
+    67.7,
+    -22.1,
+    -70.8
+   ],
+   "design_feature": "tilt plate body"
+  }
+ },
+ "raw_max": 31.91709782181801,
+ "raw_xyz": [
+  -52.7,
+  -19.9,
+  -62.4
+ ],
+ "raw_part": "tilt plate",
+ "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+ "design_max": 18.477220298646117,
+ "design_xyz": [
+  67.7,
+  -22.1,
+  -70.8
+ ],
+ "design_part": "tilt plate",
+ "design_feature": "tilt plate body",
+ "yoke_bend_root_max": 14.797130911104457,
+ "yoke_bend_root_xyz": [
+  134.9,
+  -14.6,
+  150.9
+ ],
+ "excluded_node_fraction": 0.27753801375018816,
+ "reader_cg_disp_mm": [
+  -0.068206,
+  0.0912001,
+  0.00165931
+ ],
+ "reader_cg_disp_mag_mm": 0.11389587343572243,
+ "max_disp_mm": 0.3374241140956721,
+ "support_reaction_sum_N": [
+  0.00010558357438839039,
+  -116.47630592430589,
+  29.43010020981373
+ ]
+}

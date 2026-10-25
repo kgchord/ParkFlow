@@ -1,0 +1,79 @@
+{
+ "tag": "B_contact_h6",
+ "support": "contact",
+ "h": 6.0,
+ "nodes": 91611,
+ "elements": 45551,
+ "quality_min_SICN": 0.01672247499090514,
+ "quality_mean_SICN": 0.7893436046109507,
+ "quality_n_SICN_below_0p1": 28,
+ "regions": {
+  "yoke": {
+   "raw_max": 131.4726021278578,
+   "raw_xyz": [
+    -86.1,
+    -2.5,
+    160.0
+   ],
+   "raw_feature": "web washer support edge (0.6 mm)",
+   "design_max": 40.76821795526634,
+   "design_xyz": [
+    -135.0,
+    -30.0,
+    150.0
+   ],
+   "design_feature": "yoke bend root (web-cheek, R5/R10) (0.0 mm)"
+  },
+  "tilt plate": {
+   "raw_max": 27.06725001450831,
+   "raw_xyz": [
+    52.7,
+    -19.8,
+    -62.5
+   ],
+   "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+   "design_max": 17.250792827829386,
+   "design_xyz": [
+    -68.0,
+    -17.3,
+    -69.3
+   ],
+   "design_feature": "tilt plate body"
+  }
+ },
+ "raw_max": 131.4726021278578,
+ "raw_xyz": [
+  -86.1,
+  -2.5,
+  160.0
+ ],
+ "raw_part": "yoke",
+ "raw_feature": "web washer support edge (0.6 mm)",
+ "design_max": 40.76821795526634,
+ "design_xyz": [
+  -135.0,
+  -30.0,
+  150.0
+ ],
+ "design_part": "yoke",
+ "design_feature": "yoke bend root (web-cheek, R5/R10) (0.0 mm)",
+ "yoke_bend_root_max": 40.76821795526634,
+ "yoke_bend_root_xyz": [
+  -135.0,
+  -30.0,
+  150.0
+ ],
+ "excluded_node_fraction": 0.18212143928035981,
+ "reader_cg_disp_mm": [
+  -0.0463048,
+  0.984867,
+  -0.123848
+ ],
+ "reader_cg_disp_mag_mm": 0.9937029079639649,
+ "max_disp_mm": 1.9209855556965618,
+ "support_reaction_sum_N": [
+  0.0018502999999263636,
+  -116.47603230000017,
+  1432.4062940007486
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "tag": "B_washer_h6",
+ "support": "washer",
+ "h": 6.0,
+ "nodes": 83784,
+ "elements": 41729,
+ "quality_min_SICN": 0.014174608797297183,
+ "quality_mean_SICN": 0.7814040330854115,
+ "quality_n_SICN_below_0p1": 43,
+ "regions": {
+  "yoke": {
+   "raw_max": 137.02007591802013,
+   "raw_xyz": [
+    82.1,
+    -6.4,
+    160.0
+   ],
+   "raw_feature": "web washer support edge (0.7 mm)",
+   "design_max": 51.43881144325631,
+   "design_xyz": [
+    95.0,
+    -0.2,
+    155.0
+   ],
+   "design_feature": "yoke body"
+  },
+  "tilt plate": {
+   "raw_max": 29.304541715130096,
+   "raw_xyz": [
+    52.7,
+    -19.8,
+    -62.5
+   ],
+   "raw_feature": "reader bolt-hole rigid patch (0.0 mm)",
+   "design_max": 19.581116871215492,
+   "design_xyz": [
+    -68.0,
+    -22.0,
+    -71.0
+   ],
+   "design_feature": "tilt plate body"
+  }
+ },
+ "raw_max": 137.02007591802013,
+ "raw_xyz": [
+  82.1,
+  -6.4,
+  160.0
+ ],
+ "raw_part": "yoke",
+ "raw_feature": "web washer support edge (0.7 mm)",
+ "design_max": 51.43881144325631,
+ "design_xyz": [
+  95.0,
+  -0.2,
+  155.0
+ ],
+ "design_part": "yoke",
+ "design_feature": "yoke body",
+ "yoke_bend_root_max": 44.14094820018143,
+ "yoke_bend_root_xyz": [
+  -134.5,
+  -26.7,
+  152.1
+ ],
+ "excluded_node_fraction": 0.13879993048831957,
+ "reader_cg_disp_mm": [
+  -0.0922112,
+  1.59683,
+  0.0141006
+ ],
+ "reader_cg_disp_mag_mm": 1.5995523690163445,
+ "max_disp_mm": 3.032870548703733,
+ "support_reaction_sum_N": [
+  0.0011370000002415281,
+  -116.47667649999957,
+  29.429869000000963
+ ]
+}

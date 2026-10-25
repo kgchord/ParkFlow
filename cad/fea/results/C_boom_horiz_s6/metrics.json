@@ -1,0 +1,48 @@
+{
+ "tag": "C_boom_horiz_s6",
+ "mode": "horiz",
+ "s": 6.0,
+ "shell_elements": 5340,
+ "shell_nodes": 16080,
+ "nodes_in_frd_expanded": 41102,
+ "quality": {
+  "minSJ": {
+   "min": 0.9999999999987,
+   "mean": 0.9999999999996553
+  },
+  "gamma": {
+   "min": 0.9999999999999379,
+   "mean": 0.9999999999999911
+  }
+ },
+ "raw_max": 52.770132095352714,
+ "raw_xyz": [
+  206.7,
+  -15.0,
+  -29.2
+ ],
+ "max_vm_beyond_XC_plus_60": 16.884838919437357,
+ "max_vm_beyond_xyz": [
+  266.5,
+  15.0,
+  -23.4
+ ],
+ "max_vm_clamp_edge_zone": 52.770132095352714,
+ "clamp_edge_xyz": [
+  206.7,
+  -15.0,
+  -29.2
+ ],
+ "sigma_xx_max_at_x265_FE": 17.0486,
+ "sigma_beam_at_x265": 16.914849111857354,
+ "sigma_xx_max_at_x400_FE": 14.6821,
+ "sigma_beam_at_x400": 14.472598170573137,
+ "sigma_xx_max_at_x700_FE": 9.22458,
+ "sigma_beam_at_x700": 9.045373856608212,
+ "beam_M_at_XC_Nmm": 49750.0,
+ "beam_sigma_at_XC_MPa": 18.00029397465034,
+ "tip_disp_FE_mm": 5.959912,
+ "tip_disp_beam_clamped_at_XC_mm": 5.698078670584557,
+ "section_W_mm3": 2763.84375,
+ "max_disp_mm": 5.696965449077342
+}
