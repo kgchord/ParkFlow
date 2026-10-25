@@ -1,0 +1,202 @@
+
+==============================================================================
+1. WIND LOAD ON LANE GANTRY POLE  (IS 875 Part 3 : 2015)
+==============================================================================
+Assumptions: k1=1.0 k2=1.0 (TC2, z<=10 m) k3=1.0 k4=1.0; Kd=Ka=Kc=1.0 (conservative)
+Delhi Vb = 47 m/s -> Vz = 47.0 m/s, pz = 0.6 Vz^2 = 1325 Pa, pd = 1325 Pa
+
+Item                            A m2   Cf     F N   z m    M Nm
+RFID reader 260x260           0.0676  1.3   116.5  1.45   168.9
+Antenna arm 40x40x350         0.0140  2.0    37.1  1.60    59.4
+ANPR camera 220x80            0.0176  1.2    28.0  1.20    33.6
+Camera arm 40x40x300          0.0120  2.0    31.8  1.20    38.2
+P10 sign cabinet 360x200      0.0720  1.3   124.1  2.25   279.1
+Edge Node IP65 300x400        0.1200  1.3   206.8  0.90   186.1
+Pole 80x80 x 2.4 m            0.1920  2.0   509.0  1.20   610.7
+Total wind                                 1053.2        1376.0
+Gravity eccentricity moment (all brackets one side): 28.0 Nm
+DESIGN BASE MOMENT  M = 1404 Nm   (base shear V = 1053 N)
+
+Pole section check (weak axis, any wind direction):
+City               Vb  pd Pa Profile   M Nm  sig MPa  FoS T5  FoS T6 top defl mm
+Delhi (pilot)      47   1325   40x40   1099    238.8    0.46    0.71       244.0
+Delhi (pilot)      47   1325   40x80   1099    132.4    0.83    1.28       133.8
+Delhi (pilot)      47   1325   80x80   1404     51.1    2.15    3.33        26.0
+Mumbai             44   1162   40x40    966    210.1    0.52    0.81       213.8
+Mumbai             44   1162   40x80    966    116.4    0.94    1.46       117.2
+Mumbai             44   1162   80x80   1234     44.9    2.45    3.79        22.8
+Chennai            50   1500   40x40   1240    269.5    0.41    0.63       276.1
+Chennai            50   1500   40x80   1240    149.4    0.74    1.14       151.4
+Chennai            50   1500   80x80   1585     57.6    1.91    2.95        29.4
+Bengaluru          33    653   40x40    556    120.8    0.91    1.41       120.3
+Bengaluru          33    653   40x80    556     67.0    1.64    2.54        65.9
+Bengaluru          33    653   80x80    706     25.7    4.28    6.62        12.8
+=> 40x40 single profile FAILS at Delhi design wind (FoS < 1). 80x80 8-slot profile selected for the pole;
+   40x40 retained for arms, 20x20 for sign/photo-beam posts.
+
+==============================================================================
+2. BASE PLATE (250x250, MS IS 2062 E250) AND 4x M12 ANCHORS ON 190 mm PCD
+==============================================================================
+Bolt square side s = PCD/sqrt2 = 134.4 mm
+Case A (side wind):     T = M/(2 s)  = 5.23 kN per bolt
+Case B (diagonal wind): T = M/PCD    = 7.39 kN (single bolt)  <- governs
+M12 8.8 tensile stress = T/As = 7390/84.3 = 87.7 MPa ; FoS vs proof(640) = 7.3
+Shear per bolt = V/4 = 263 N  (negligible; tau = 3.1 MPa)
+Anchor: M12 chemical anchor, hef >= 110 mm in M20 concrete - vendor tension resistance typically >> 10 kN;
+  required design tension 7.4 kN x 2.0 = 14.8 kN -> confirm from anchor ETA/datasheet.
+Plate t=10 mm: yield-line cantilever sigma = 3T/t^2 = 222 MPa ; FoS(E250) = 1.13
+Plate t=12 mm: yield-line cantilever sigma = 3T/t^2 = 154 MPa ; FoS(E250) = 1.62
+Plate t=16 mm: yield-line cantilever sigma = 3T/t^2 = 87 MPa ; FoS(E250) = 2.89
+=> 16 mm plate selected: FoS >= 2 with NO credit for gusset edge support (10/12 mm fail the FoS 2.0 target
+   on this conservative model; FEA with gussets may justify 12 mm - see FEM recipe).
+Socket (4x 6 mm MS cheeks, h=150 mm): bearing couple F = M/(2/3 h) = 14.0 kN; bearing on 80 mm x 20 mm contact = 8.8 MPa (OK)
+Gusset 6 mm: axial F ~ M/(2*0.10 m) = 7.02 kN; stress on 60 mm effective section = 19.5 MPa; FoS(E250) = 12.8
+Gusset fillet welds 6 mm leg (a=4.2 mm), L=440 mm: tau = 3.8 MPa (E250 weld fvw ~ 189 MPa)
+
+==============================================================================
+3. RFID ANTENNA TILT BRACKET (5 mm 5052-H32 bent yoke + tilt plate, M8 pivot, M6 lock)
+==============================================================================
+Wind on reader: F = pd*Cf*A = 1325*1.3*0.0676 = 116 N ; weight = 29 N
+Cheek in-plane bending: M = 60 N x 70 mm = 4.20 Nm -> sigma = 6M/(t b^2) = 0.8 MPa
+Tilt moment about pivot = W*60mm + F*30mm = 5.26 Nm -> lock-bolt force per side = 53 N
+  M6 8.8 friction clamp (preload ~ 8 kN, mu 0.2) = 1600 N/side -> FoS 30.4 vs slip
+Bend-root out-of-plane (all wind to one cheek, 30 mm offset): sigma = 10.5 MPa
+M8 pivot bearing in 5 mm plate: 1.5 MPa ; M8 shear (single) = 1.6 MPa
+Governing bracket stress = 10.5 MPa ; FoS (5052-H32, Rp0.2 130) = 12.4
+If MS 5 mm used: FoS (E250) = 23.8
+Antenna arm 40x40 (L=350 mm) root moment = 49 Nm -> sigma = 10.6 MPa ; FoS(6063-T5) = 10.4
+Arm torsion (reader centre 180 mm below arm axis): T = 21 Nm -> resisted by 2x M8 corner brackets + M6 T-nuts on yoke (couple over 200 mm = 105 N)
+
+==============================================================================
+4. DEMO BOOM BARRIER (1.2 m boom, Al 6063-T5 rect tube 60x30x1.5)
+==============================================================================
+Section A = 261 mm2, Iv = 123316 mm4, Wv = 4111 mm3, Ih = 41506 mm4, Wh = 2767 mm3
+Boom mass = 0.846 kg tube + 0.15 kg fittings = 0.996 kg  (0.705 kg/m)
+Load case: self weight + 50 N vertical tip load (boom horizontal)
+  M_hub = 66.7 Nm ; sigma = 16.2 MPa ; FoS(6063-T5) = 6.8
+  Tip deflection = 3.7 mm  (L/327)
+  50 N horizontal tip push (vehicle nudge): M = 60 Nm, sigma_h = 21.7 MPa, FoS = 5.1
+  Carrier clamp: 2x M6 through-bolts @60 mm -> couple force 1112 N; bearing on 2x1.5 mm walls = 62 MPa vs 6063-T5 bearing ~1.5*Rm=240 -> FoS 3.9 (use crush tube / sleeve)
+Breakaway shear pin (single shear, e = 35 mm from hinge): break at 100 N tip -> F_pin = 3300 N
+  6061-T6 pin tau_u ~ 0.6 Rm = 174 MPa -> d = 4.91 mm -> use d = 5.0 mm (breaks at 104 N tip; 50 N service = 48% of break)
+Static gravity torque of boom about shaft = 6.88 Nm
+Counterweight: target 85% balance at 200 mm tail -> 2.98 kg required; MS plate 100x60x10 = 0.471 kg -> 7 plates = 3.30 kg INSTALLED (balance 94%, still boom-heavy)
+  Residual gravity closing torque with the motor unpowered = 0.41 Nm = 0.34 N at the boom tip (cannot crush; breakaway pin covers lateral hits)
+Motion 0->90 deg in 2.5 s, accel 0.4 s: omega = 0.75 rad/s (7.1 rpm), alpha = 1.87 rad/s2
+Inertia: boom 0.622 kg m2, counterweight 0.132 kg m2
+Operating wind 15 m/s (p=135 Pa) on RAISED boom, Cf 2.0, hub moment by projected face:
+  30 mm face (wind in the rotation plane): 5.83 Nm ; worst oblique 48.5 mm at 32 deg: 9.44 Nm ; old 60 mm face: 11.66 Nm
+Required torque WITHOUT counterweight (worst oblique) = 17.77 Nm   [60 mm face: 20.00]
+Required torque WITH counterweight    (worst oblique) = 11.55 Nm   [60 mm face: 13.78]
+Production selection: rated >= max(2.0 x 11.6 (with CW), 1.5 x 17.8 (CW-missing fault)) = 26.7 Nm at output speed >= 7 rpm  -> keep the >= 30 Nm specification for a 15 m/s operating-wind rating
+  (specify a 24 V DC self-locking worm gearmotor with a DATASHEET rated torque >= 30 Nm, 10-15 rpm output, >= 12 mm shaft;
+   no such part is in the BOM yet - see docs/OPEN_DECISIONS.md.)
+
+BOM motor check (Lucas TVS 24 V wiper motor, listed 18 Nm; rated vs stall, speed, duty and self-locking NOT stated by the vendor):
+  Margin at 15 m/s: 18 / 11.6 = 1.56 (target >= 2.0) -> SHORT for a 15 m/s rating
+  Still-air requirement (gravity residual + acceleration + friction) = 2.12 Nm -> margin 8.5x
+  Highest operating wind for margin 2.0 on 18 Nm = 12.8 m/s (46 km/h); for margin 1.5 = 15.4 m/s (55 km/h)
+  => DEMO rating chosen: operate the boom only in wind <= 12 m/s (43 km/h); above that the boom stays lowered/pinned. Production rating (15 m/s) needs the >= 30 Nm motor.
+  Check: at 12 m/s required 8.16 Nm, 18 Nm gives margin 2.21
+  Mechanical power at peak (15 m/s case) = 8.6 W ; with worm eff. ~40% -> electrical ~ 27 W
+  Motor current is NOT known (no vendor figure). The 24 V bus is sized for a 5 A firmware limit (IS sense); stall current to be bench-measured.
+  Self-locking is NOT assumed anywhere in this design: holding is by the lowered-boom rest/stop and a storm-lock pin (below).
+
+RAISED-BOOM SURVIVAL CASE: Delhi design gust 47 m/s -> p = 1325 Pa (IS 875-3, Kd=Ka=Kc=1.0), Cf 2.0, arm Lb/2 = 0.60 m
+  back-driving moment at the hub: 30 mm face 57 Nm ; worst oblique (48.5 mm) 93 Nm ; 60 mm bounding face 115 Nm
+  design value used for checks = 93 Nm (oblique); the earlier '100-115 Nm' quote was the 60 mm bounding face (115 Nm)
+  20 mm stub shaft (MS E250): tau = T/Wp = 59 MPa (E250 shear yield ~0.58x250 = 145 MPa) -> FoS 2.5
+  6x6x25 key: shear 62 MPa, bearing 124 MPa (E250 yield 250) -> FoS 2.0 bearing
+  lateral reaction on the two UCFL204 bearings from the raised boom: 95 N total (30 mm face) -> well below a UC204 static rating (datasheet value to be confirmed)
+  The 18 Nm motor/gearbox CANNOT be assumed to hold 93 Nm (stall 18 Nm, back-drive behaviour unknown).
+  => the survival load path is a STORM-LOCK PIN through the hub/boom carrier into the frame (boom lowered or raised), not the gearbox.
+     Storm rule (no anemometer in the BOM): on an IMD thunderstorm / dust-storm warning the guard lowers the boom and drops the pin.
+     Pin check (PROPOSED, not yet in the CAD): 10 mm MS pin in double shear carries 93 Nm at a 60 mm lever = 1544 N -> tau = 10 MPa (FoS 14.8 vs 145 MPa). FEA/bench to confirm.
+
+CLOSED-BOOM GUST vs BREAKAWAY PIN: gust moment about the vertical hinge = 1325 Pa x 2.0 x 60 mm x 1.155 m x 0.578 m = 106 Nm
+  5 mm 6061-T6 pin breaks at about 120 Nm (nominal tau_u 0.6 Rm; scatter of +/-10 % is normal) -> gust = 89 % of break
+  Wind speed that loads the pin to 50 % of its break value (the service margin used for the 50 N push) = 35.3 m/s
+  => in the 47 m/s design gust the pin is at about 90 % of break: a nuisance shear is possible (fail-safe: the boom swings free). Keep spare pins (BOM).
+
+==============================================================================
+5. EDGE NODE IP65 ENCLOSURE - THERMAL (sealed, natural convection)
+==============================================================================
+  Raspberry Pi 5 8GB + AI HAT+ (Hailo-8) peak                 12.0 W
+  24->5 V 5 A buck for Pi (eff 92%)                            1.0 W
+  Industrial PoE switch 5-port (self)                          4.0 W
+  PoE conversion loss for 6 W camera (85%)                     1.1 W
+  Lane Controller PCB (ESP32-S3, drivers, LED, buzzer)         2.0 W
+  Motor H-bridge (IBT-2 module) losses, 10% duty avg           1.0 W
+  DC-UPS module (float charge)                                 1.0 W
+  Mean Well LRS-200-24 losses (44 W out @ 87%)                 6.6 W
+  TOTAL, everything in one box                                28.7 W   (without the 24 V PSU: 22.1 W)
+Limits: AI HAT+ air 50 degC (the old 55 degC allowance was above it) ; GS305P switch 40 degC. Ambient 45 degC.
+Radiation coefficient (eps 0.9, T_mean 48 degC): h_r = 6.7 W/m2K. CONVECTION-ONLY numbers are the design basis; radiation is shown as a sensitivity.
+
+Case                                                             A m2  Q_air W  T_int T_int+rad max Tamb  verdict (<= 50 degC)
+CAD/CALCS box 300x400x180: sealed, all loads in box             0.372     28.7   60.4      51.6     34.6  conv FAILS / with radiation FAILS
+CAD/CALCS box 300x400x180: + through-wall sink (80 % Pi/HAT, 50 % PSU)  0.372     15.8   53.5      48.6     41.5  conv FAILS / with radiation ok
+CAD/CALCS box 300x400x180: PSU moved to separate power box + sink (80 % Pi/HAT)  0.372     12.5   51.7      47.9     43.3  conv FAILS / with radiation ok
+BOM box 300x300x210 (GRASP, bought): sealed, all loads in box   0.342     28.7   61.8      52.2     33.2  conv FAILS / with radiation FAILS
+BOM box 300x300x210 (GRASP, bought): + through-wall sink (80 % Pi/HAT, 50 % PSU)  0.342     15.8   54.2      48.9     40.8  conv FAILS / with radiation ok
+BOM box 300x300x210 (GRASP, bought): PSU moved to separate power box + sink (80 % Pi/HAT)  0.342     12.5   52.3      48.1     42.7  conv FAILS / with radiation ok
+
+CONCLUSION (bought box 300x300x210): sealed 61.8 degC ; with sink 54.2 degC (FAILS the 50 degC HAT+ limit, as before);
+  with the 24 V PSU moved to a small separate power box the Edge box is 52.3 degC convection-only, 48.1 degC counting radiation.
+  That straddles the limit: NOT demonstrated. The highest ambient that keeps the air at 50 degC is 42.7 degC (convection) to 46.9 degC (with radiation).
+  Changing the box from 300x300x210 to 300x400x180 changes the sealed/sink result by <= 1 K (51.7 vs 52.3 degC): the box size is NOT the lever, the heat load is.
+  GS305P: its air is the same box air (52 degC) against a 40 degC rating -> the consumer switch is outside its rating at 45 degC ambient in every case; see OPEN_DECISIONS (industrial PoE switch).
+Power box 250x190x95 (plastic), A = 0.131 m2, Q = 9.6 W -> dT = 14.6 K -> 59.6 degC air at 45 degC ambient (PSU derating at that temperature: confirm on the Mean Well sheet)
+Sink: 9.6 W through a 200 x 150 mm extruded sink at 65 degC base, eta_fin 0.85: required A = Q/(h eta dT) = 0.113 m2 ; provided (18 fins x 35 x 150 + base) 0.219 m2 (margin 1.94x)
+Solar gain (unshaded, alpha 0.30, 1000 W/m2 on top + 50% front) ~ 32 W -> sun shield is MANDATORY
+  (2 mm Al canopy, 25 mm ventilated air gap, cuts absorbed solar ~80%; not included above).
+Fan alternative: airflow = Q/(rho cp dT) = 10.3 m3/h for a 5 K rise (one 60 mm fan) but it drops the rating to IP54 - not chosen.
+Derating that does not need hardware (targets, to be bench-verified): ANPR frame rate capped from 75 degC SoC; Pi 5 Active Cooler fan (BOM) inside the box.
+
+==============================================================================
+6. MASS ESTIMATES (analytical volume x density; see MATERIALS.md)
+==============================================================================
+  Pole 80x80 x 2400 (5.4 kg/m vendor approx)                     6063-T5       12.960 kg
+  Base plate 250x250x16 - 4xD14 - D30                            IS2062-E250    7.684 kg
+  Socket cheeks 2x(92x150x6)+2x(80x150x6)                        IS2062-E250    2.430 kg
+  Gussets 4x (0.5x100x120x6)                                     IS2062-E250    1.130 kg
+  Antenna arm 40x40x350                                          6063-T5        0.525 kg
+  Antenna yoke 5 mm flat 280x... (flat area ~ 280x60+2x100x80)   5052-H32       0.440 kg
+  Antenna tilt plate 5 mm (flat ~ 240x200 + 2x80x60 - holes)     5052-H32       0.638 kg
+  Camera arm 40x40x300                                           6063-T5        0.450 kg
+  Camera adapter plate 5 mm 120x80                               5052-H32       0.129 kg
+  Sign bracket 3 mm 5052 (2x 200x80)                             5052-H32       0.257 kg
+  Pole cap ASA 84x84x15 shell 2 mm                               ASA-FDM        0.024 kg
+  Edge backplate 3 mm 5052 260x360                               5052-H32       0.753 kg
+  Edge heat spreader 5 mm 6061 100x70 + bar 10x20x90             6061-T6        0.143 kg
+  Edge heat sink 200x150 base 6 mm + 18 fins 2x35x150            6063-T5        0.996 kg
+  Edge wall brackets 2x 3 mm MS 340x50                           IS2062-E250    0.801 kg
+  Edge Pi tray PETG/ASA 100x75x3 + bosses                        ASA-FDM        0.027 kg
+  Barrier base plate 300x250x8                                   IS2062-E250    4.710 kg
+  Barrier frame 20x20 posts 4x800 + 4x(260+210) rails (0.5 kg/m) 6063-T5        2.070 kg
+  Barrier panels 2 mm 5052 (2x300x800 + 2x250x800 + 300x250)     5052-H32       5.119 kg
+  Motor plate 6 mm 6061 200x150                                  6061-T6        0.486 kg
+  Hub 6061 D70x30 + flange                                       6061-T6        0.312 kg
+  Boom carrier 2x 5 mm 6061 160x70                               6061-T6        0.302 kg
+  Boom 60x30x1.5 x 1200                                          6063-T5        0.846 kg
+  Counterweight MS plates (7 x 100x60x10)                        IS2062-E250    3.297 kg
+  Limit flags 2x 3 mm 5052 60x40                                 5052-H32       0.039 kg
+  Photo-beam posts 2x 20x20x450 + 2x 100x100x5 feet              6063-T5        1.235 kg
+  Occ node base ASA (D90 shell 2.4 mm)                           ASA-FDM        0.042 kg
+  Occ node cover ASA                                             ASA-FDM        0.027 kg
+
+==============================================================================
+SUMMARY (analytical predictions - to be FEA-checked and bench-verified)
+==============================================================================
+Pole base moment (Delhi 47 m/s, all items)      : 1404 Nm, base shear 1053 N
+80x80 pole stress / FoS (6063-T5 Rp0.2 110 MPa)  : 51.1 MPa / 2.15
+40x40 pole stress / FoS (rejected)                : 239 MPa / 0.46
+Pole top deflection at design wind (80x80)       : 26.0 mm
+Anchor tension (diag) / M12 FoS vs proof          : 7.39 kN / 7.3
+Base plate 16 mm stress / FoS (E250)              : 87 MPa / 2.89
+Antenna bracket peak stress / FoS (5052-H32)      : 10.5 MPa / 12.4
+Boom hub moment / stress / FoS / tip deflection   : 66.7 Nm / 16.2 MPa / 6.8 / 3.7 mm
+Motor torque req. without / with counterweight    : 17.8 / 11.6 Nm at 15 m/s -> production spec >= 30 Nm rated; BOM 18 Nm motor rated for <= 12 m/s operating wind (demo)
+Raised-boom survival moment at 47 m/s (oblique / 60 mm) : 93 / 115 Nm -> storm-lock pin, not the gearbox
+Closed-boom gust moment / pin break moment        : 106 / 120 Nm
+Edge Node dissipation / sealed T_int / with HS    : 28.7 W / 61.8 degC / 54.2 degC (FAILS 50 degC HAT+ limit) ; PSU moved out: 52.3 degC conv. / 48.1 degC with radiation
