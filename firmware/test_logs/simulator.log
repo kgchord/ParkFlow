@@ -1,0 +1,24 @@
+scenario                               decision  reason                 alert result
+happy_path_tag_and_plate               GRANT     MATCH                  False OK
+ocr_confusions_corrected               GRANT     MATCH                  False OK
+dash_and_series_letters                GRANT     MATCH                  False OK
+bh_series                              GRANT     MATCH                  False OK
+bh_series_ocr                          GRANT     MATCH                  False OK
+tag_only                               FALLBACK  TAG_ONLY               False OK
+plate_only_two_wheeler                 GRANT     PLATE_ONLY_PASS        False OK
+plate_only_unknown                     FALLBACK  UNKNOWN_PLATE          False OK
+plate_only_but_registered_with_tag     FALLBACK  PLATE_ONLY_NO_TAG      False OK
+soft_match_one_char                    FALLBACK  SOFT_MATCH             False OK
+possible_cloned_tag                    FALLBACK  TAG_PLATE_MISMATCH     True  OK
+mismatch_but_low_ocr_confidence        FALLBACK  LOW_CONFIDENCE         False OK
+matching_but_very_low_confidence       FALLBACK  LOW_CONFIDENCE         False OK
+blacklisted_plate                      DENY      BLACKLIST              True  OK
+blacklisted_tag                        DENY      BLACKLIST              True  OK
+blacklist_near_miss                    FALLBACK  BLACKLIST_NEAR         True  OK
+cross_lane_tag_ignored                 FALLBACK  PLATE_ONLY_NO_TAG      False OK
+inactive_registration                  FALLBACK  INACTIVE               False OK
+no_read_at_all                         FALLBACK  NO_READ                False OK
+unparseable_plate                      FALLBACK  INVALID_PLATE_FORMAT   False OK
+offline_queue_then_idempotent_sync     GRANT     MATCH                  False OK
+
+21/21 scenarios matched their scripted expectation (MOCK ledger, simulated clock; not a hardware result)

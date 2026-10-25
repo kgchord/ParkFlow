@@ -1,0 +1,117 @@
+# plain build
+[ OK ] sim_full_cycle_rfid_to_barrier_closed_again
+[ OK ] sim_plate_only_vehicle_no_tag_still_gets_decision
+[ OK ] sim_beam_break_during_close_reverses_and_hardware_stops_descent_at_once
+[ OK ] sim_unbeamed_obstacle_overcurrent_reverses_then_locks_out_open
+[ OK ] sim_estop_cuts_motion_immediately_even_if_firmware_is_blind
+[ OK ] sim_edge_node_death_opens_lane_and_recovery_closes_it
+[ OK ] sim_mains_loss_opens_boom_and_holds
+[ OK ] sim_limit_switch_failure_hits_hard_stop_and_faults_on_overcurrent
+[ OK ] sim_limit_switch_failure_without_stall_current_hits_time_out
+[ OK ] sim_external_watchdog_not_kicked_after_a_stalled_control_loop
+[ OK ] sim_inventory_command_is_sent_to_reader_on_vehicle_detect
+[ OK ] sim_edge_garbage_does_not_change_state
+[ OK ] boot_with_closed_limit_goes_idle
+[ OK ] boot_with_unknown_position_homes_open_never_closes
+[ OK ] happy_path_tag_and_plate_granted
+[ OK ] plate_only_no_tag_reports_notag_then_can_grant
+[ OK ] strongest_rssi_wins_and_distinct_counted
+[ OK ] decision_timeout_goes_to_fallback_and_guard_can_open
+[ OK ] deny_goes_to_fallback_and_fallback_times_out_to_idle
+[ OK ] stale_decision_sequence_is_ignored
+[ OK ] retrigger_lockout_after_cycle_blocks_tag_but_not_presence
+[ OK ] close_never_starts_while_beam_broken_even_after_no_pass_timeout
+[ OK ] close_never_starts_while_presence_sensed
+[ OK ] reverse_on_beam_break_while_closing_with_dead_time
+[ OK ] reverse_on_presence_while_closing
+[ OK ] overcurrent_trips_only_after_inrush_blank_and_hold
+[ OK ] repeated_reversals_lock_out_with_boom_left_open
+[ OK ] open_timeout_faults_at_1p5x_nominal_and_latches
+[ OK ] close_timeout_faults
+[ OK ] open_stall_overcurrent_faults_not_reverses
+[ OK ] both_limits_reached_is_a_fault
+[ OK ] estop_stops_everything_and_needs_explicit_rearm
+[ OK ] rearm_ignored_while_estop_still_pressed
+[ OK ] link_loss_fail_open_opens_and_holds_then_recovers_with_hysteresis
+[ OK ] link_boot_grace_then_open_hold_if_edge_never_appears
+[ OK ] fail_secure_policy_never_auto_opens_on_link_loss
+[ OK ] link_loss_while_closing_reverses_via_dead_time
+[ OK ] mains_loss_debounced_then_opens_and_drops_contactor_when_open
+  fuzz coverage: close_ticks=17754 reversals=18 fault_ticks=27883 states_mask=0xfff
+[ OK ] fuzz_invariants_hold_for_random_inputs
+[ OK ] crc_known_check_values_123456789
+[ OK ] rfid_parses_good_frame_with_signed_rssi
+[ OK ] rfid_resyncs_after_noise_split_and_back_to_back_frames
+[ OK ] rfid_bad_crc_is_dropped_and_next_frame_still_decodes
+[ OK ] rfid_rejects_absurd_length_and_non_tag_type
+[ OK ] rfid_parser_is_configurable_for_a_different_layout
+[ OK ] edge_decodes_all_command_types
+[ OK ] edge_known_vector_shared_with_python_tests
+[ OK ] edge_rejects_bad_checksum_garbage_and_unknown
+[ OK ] edge_encode_events_roundtrip_checksum
+[ OK ] buzzer_and_led_patterns
+[ OK ] debounce_is_asymmetric
+[ OK ] task_supervisor_flags_a_missed_deadline
+[ OK ] pin_table_has_no_duplicates_and_matches_schematic_spot_checks
+
+53 tests, 1717877 checks, 0 failed checks, 0 failed tests
+exit=0
+
+# ASan+UBSan build
+[ OK ] sim_full_cycle_rfid_to_barrier_closed_again
+[ OK ] sim_plate_only_vehicle_no_tag_still_gets_decision
+[ OK ] sim_beam_break_during_close_reverses_and_hardware_stops_descent_at_once
+[ OK ] sim_unbeamed_obstacle_overcurrent_reverses_then_locks_out_open
+[ OK ] sim_estop_cuts_motion_immediately_even_if_firmware_is_blind
+[ OK ] sim_edge_node_death_opens_lane_and_recovery_closes_it
+[ OK ] sim_mains_loss_opens_boom_and_holds
+[ OK ] sim_limit_switch_failure_hits_hard_stop_and_faults_on_overcurrent
+[ OK ] sim_limit_switch_failure_without_stall_current_hits_time_out
+[ OK ] sim_external_watchdog_not_kicked_after_a_stalled_control_loop
+[ OK ] sim_inventory_command_is_sent_to_reader_on_vehicle_detect
+[ OK ] sim_edge_garbage_does_not_change_state
+[ OK ] boot_with_closed_limit_goes_idle
+[ OK ] boot_with_unknown_position_homes_open_never_closes
+[ OK ] happy_path_tag_and_plate_granted
+[ OK ] plate_only_no_tag_reports_notag_then_can_grant
+[ OK ] strongest_rssi_wins_and_distinct_counted
+[ OK ] decision_timeout_goes_to_fallback_and_guard_can_open
+[ OK ] deny_goes_to_fallback_and_fallback_times_out_to_idle
+[ OK ] stale_decision_sequence_is_ignored
+[ OK ] retrigger_lockout_after_cycle_blocks_tag_but_not_presence
+[ OK ] close_never_starts_while_beam_broken_even_after_no_pass_timeout
+[ OK ] close_never_starts_while_presence_sensed
+[ OK ] reverse_on_beam_break_while_closing_with_dead_time
+[ OK ] reverse_on_presence_while_closing
+[ OK ] overcurrent_trips_only_after_inrush_blank_and_hold
+[ OK ] repeated_reversals_lock_out_with_boom_left_open
+[ OK ] open_timeout_faults_at_1p5x_nominal_and_latches
+[ OK ] close_timeout_faults
+[ OK ] open_stall_overcurrent_faults_not_reverses
+[ OK ] both_limits_reached_is_a_fault
+[ OK ] estop_stops_everything_and_needs_explicit_rearm
+[ OK ] rearm_ignored_while_estop_still_pressed
+[ OK ] link_loss_fail_open_opens_and_holds_then_recovers_with_hysteresis
+[ OK ] link_boot_grace_then_open_hold_if_edge_never_appears
+[ OK ] fail_secure_policy_never_auto_opens_on_link_loss
+[ OK ] link_loss_while_closing_reverses_via_dead_time
+[ OK ] mains_loss_debounced_then_opens_and_drops_contactor_when_open
+  fuzz coverage: close_ticks=17754 reversals=18 fault_ticks=27883 states_mask=0xfff
+[ OK ] fuzz_invariants_hold_for_random_inputs
+[ OK ] crc_known_check_values_123456789
+[ OK ] rfid_parses_good_frame_with_signed_rssi
+[ OK ] rfid_resyncs_after_noise_split_and_back_to_back_frames
+[ OK ] rfid_bad_crc_is_dropped_and_next_frame_still_decodes
+[ OK ] rfid_rejects_absurd_length_and_non_tag_type
+[ OK ] rfid_parser_is_configurable_for_a_different_layout
+[ OK ] edge_decodes_all_command_types
+[ OK ] edge_known_vector_shared_with_python_tests
+[ OK ] edge_rejects_bad_checksum_garbage_and_unknown
+[ OK ] edge_encode_events_roundtrip_checksum
+[ OK ] buzzer_and_led_patterns
+[ OK ] debounce_is_asymmetric
+[ OK ] task_supervisor_flags_a_missed_deadline
+[ OK ] pin_table_has_no_duplicates_and_matches_schematic_spot_checks
+
+53 tests, 1717877 checks, 0 failed checks, 0 failed tests
+exit=0

@@ -1,0 +1,494 @@
+{
+ "mock": true,
+ "results": [
+  {
+   "name": "happy_path_tag_and_plate",
+   "description": "FASTag EPC and plate agree -> auto GRANT",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "ocr_confusions_corrected",
+   "description": "Plate read as 'mh-i2-a8-1234' (I for 1, 8 for B) is normalised to MH12AB1234",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [
+    "OCR_CORRECTED:2"
+   ],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "dash_and_series_letters",
+   "description": "'DL-3C-AB-1234' (Delhi 1-digit RTO, 3 series letters)",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "bh_series",
+   "description": "Bharat series plate '22 BH 1234 AA'",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "bh_series_ocr",
+   "description": "BH plate read '22 8H 1234 AA' (8 for B)",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [
+    "OCR_CORRECTED:1"
+   ],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "tag_only",
+   "description": "Tag read, camera sees no plate -> guard soft-confirm",
+   "decision": "FALLBACK",
+   "reason": "TAG_ONLY",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 600,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "plate_only_two_wheeler",
+   "description": "Two-wheeler resident pass, no FASTag, confident plate -> GRANT",
+   "decision": "GRANT",
+   "reason": "PLATE_ONLY_PASS",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "plate_only_unknown",
+   "description": "Unregistered plate, no tag -> guard / QR path",
+   "decision": "FALLBACK",
+   "reason": "UNKNOWN_PLATE",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "plate_only_but_registered_with_tag",
+   "description": "Registered 4-wheeler whose tag was not read -> guard soft-confirm",
+   "decision": "FALLBACK",
+   "reason": "PLATE_ONLY_NO_TAG",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "soft_match_one_char",
+   "description": "Tag matches, plate differs by one character (MH12AB1284) -> guard",
+   "decision": "FALLBACK",
+   "reason": "SOFT_MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 1,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "possible_cloned_tag",
+   "description": "Confident plate MH12AB1234 but tag belongs to KA01MN4567 -> alert, no auto-open",
+   "decision": "FALLBACK",
+   "reason": "TAG_PLATE_MISMATCH",
+   "alert": true,
+   "possible_clone": true,
+   "flags": [],
+   "distance": 10,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "mismatch_but_low_ocr_confidence",
+   "description": "Plate disagrees with tag but OCR conf 0.55: likelier a misread than a clone",
+   "decision": "FALLBACK",
+   "reason": "LOW_CONFIDENCE",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 10,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "matching_but_very_low_confidence",
+   "description": "Exact match but OCR conf 0.30 -> guard",
+   "decision": "FALLBACK",
+   "reason": "LOW_CONFIDENCE",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "blacklisted_plate",
+   "description": "Blacklisted plate -> DENY (controller still routes to guard, never hard-blocks)",
+   "decision": "DENY",
+   "reason": "BLACKLIST",
+   "alert": true,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "blacklisted_tag",
+   "description": "Blacklisted EPC even with a plausible plate",
+   "decision": "DENY",
+   "reason": "BLACKLIST",
+   "alert": true,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "blacklist_near_miss",
+   "description": "Plate one edit from a blacklisted plate -> guard alert",
+   "decision": "FALLBACK",
+   "reason": "BLACKLIST_NEAR",
+   "alert": true,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "cross_lane_tag_ignored",
+   "description": "Tag peaked 1.2 s away from this lane's plate: adjacent-lane read ignored (R2)",
+   "decision": "FALLBACK",
+   "reason": "PLATE_ONLY_NO_TAG",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [
+    "CROSS_LANE_TAG_IGNORED"
+   ],
+   "distance": 0,
+   "dec_line_sent_at_ms": 130,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "inactive_registration",
+   "description": "Registered but deactivated tag + matching plate",
+   "decision": "FALLBACK",
+   "reason": "INACTIVE",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "no_read_at_all",
+   "description": "Vehicle detected, no tag and no plate before the deadline",
+   "decision": "FALLBACK",
+   "reason": "NO_READ",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 600,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "unparseable_plate",
+   "description": "Garbled OCR 'M#1 2 A'",
+   "decision": "FALLBACK",
+   "reason": "INVALID_PLATE_FORMAT",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": null,
+   "dec_line_sent_at_ms": 430,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 1,
+    "SENT": 0,
+    "REJECTED": 0
+   },
+   "sync_results": [],
+   "debits_total_paise": 0,
+   "mock_ledger_postings": 0,
+   "failures": [],
+   "ok": true
+  },
+  {
+   "name": "offline_queue_then_idempotent_sync",
+   "description": "Ledger offline at pass; event queued; sync after reconnect with a lost ack; exactly one debit",
+   "decision": "GRANT",
+   "reason": "MATCH",
+   "alert": false,
+   "possible_clone": false,
+   "flags": [],
+   "distance": 0,
+   "dec_line_sent_at_ms": 120,
+   "dec_count": 1,
+   "queue": {
+    "PENDING": 0,
+    "SENT": 2,
+    "REJECTED": 0
+   },
+   "sync_results": [
+    {
+     "sent": 0,
+     "rejected": 0,
+     "stopped_on_error": true
+    },
+    {
+     "sent": 0,
+     "rejected": 0,
+     "stopped_on_error": true
+    },
+    {
+     "sent": 2,
+     "rejected": 0,
+     "stopped_on_error": false
+    },
+    {
+     "sent": 0,
+     "rejected": 0,
+     "stopped_on_error": false
+    }
+   ],
+   "debits_total_paise": 2000,
+   "mock_ledger_postings": 2,
+   "failures": [],
+   "ok": true
+  }
+ ]
+}

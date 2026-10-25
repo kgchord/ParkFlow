@@ -1,0 +1,28 @@
+{
+  "label": "host CPU, not target hardware, not an end-to-end latency",
+  "what_was_timed": "fuse(): plate normalisation + in-memory SQLite allow-list lookups + decision",
+  "not_included": [
+    "camera capture",
+    "ANPR inference",
+    "RFID read",
+    "UART/serial",
+    "Lane Controller",
+    "disk-backed DB"
+  ],
+  "machine": {
+    "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "logical_cpus": 2,
+    "python": "3.13.17",
+    "os": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"
+  },
+  "allow_list_size": 5000,
+  "calls": 20000,
+  "ms": {
+    "mean": 0.0271327311,
+    "median": 0.026475,
+    "p95": 0.048143,
+    "p99": 0.08393,
+    "max": 2.092814
+  },
+  "target_300ms_status": "NOT VERIFIED: the 300 ms decision-latency figure is a TARGET to bench-verify on the Raspberry Pi 5"
+}
