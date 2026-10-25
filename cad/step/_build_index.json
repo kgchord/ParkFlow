@@ -1,0 +1,2670 @@
+{
+ "parts": [
+  {
+   "id": "gantry_base_plate",
+   "domain": "gantry",
+   "desc": "Base plate 250x250x16, 4x D14 anchor holes on PCD190, D30 centre hole, 4 grout slots (laser cut)",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "bp_w",
+    "bp_t",
+    "bp_corner_r",
+    "bp_pcd",
+    "bp_anchor_hole",
+    "bp_centre_hole"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nlinear_extrude(bp_t) base_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_base_plate.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_base_weldment.scad:base_plate_2d"
+   ],
+   "mat_key": "base_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_socket_cheek_long",
+   "domain": "gantry",
+   "desc": "Socket cheek (long, 93x150x6) with M10 cross-bolt hole z1 and weld-start relief notch",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "pole_w",
+    "sock_clear",
+    "sock_t",
+    "sock_h",
+    "sock_bolt_d",
+    "sock_bolt_z1"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nlinear_extrude(sock_t) socket_cheek_long_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_socket_cheek_long.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_base_weldment.scad:socket_cheek_long_2d"
+   ],
+   "mat_key": "cheeks",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_socket_cheek_short",
+   "domain": "gantry",
+   "desc": "Socket cheek (short, 81x150x6) with M10 cross-bolt hole z2",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "pole_w",
+    "sock_clear",
+    "sock_t",
+    "sock_h",
+    "sock_bolt_d",
+    "sock_bolt_z2"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nlinear_extrude(sock_t) socket_cheek_short_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_socket_cheek_short.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_base_weldment.scad:socket_cheek_short_2d"
+   ],
+   "mat_key": "cheeks",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_gusset",
+   "domain": "gantry",
+   "desc": "Gusset 74x120x6 with weld-clearance snipe and 15 mm flat tip",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "gus_l",
+    "gus_h",
+    "gus_t",
+    "gus_chamfer",
+    "gus_tip"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nlinear_extrude(gus_t) gusset_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_gusset.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_base_weldment.scad:gusset_2d"
+   ],
+   "mat_key": "gussets",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "base_weldment",
+   "domain": "gantry",
+   "desc": "Base weldment as one fused solid (plate + 4 cheeks + 4 gussets); cross bolts and anchors excluded",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "bp_w",
+    "bp_t",
+    "sock_h",
+    "sock_t",
+    "gus_n",
+    "gus_l",
+    "gus_h"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nbase_weldment(false);",
+   "qty": 1,
+   "notes": "",
+   "file": "base_weldment.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_base_weldment.scad:base_weldment"
+   ],
+   "mat_key": "weldment",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_pole_80x80",
+   "domain": "gantry",
+   "desc": "Pole: 80x80 8-slot extrusion cut to length (GENERIC profile of the .scad model, not the vendor profile)",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "pole_w",
+    "pole_d",
+    "pole_len",
+    "pole_pitch",
+    "pole_slot"
+   ],
+   "ref": "include <gantry_params.scad>\ninclude <pf_common.scad>\ntslot(pole_w, pole_d, pole_len, pole_pitch, pole_slot);",
+   "qty": 1,
+   "notes": "Generic profile is heavier than the vendor 5.4 kg/m section - see manifest",
+   "file": "gantry_pole_80x80.step",
+   "sources": [
+    "gantry_params.scad",
+    "pf_common.scad:tslot2d"
+   ],
+   "mat_key": "pole",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_antenna_arm_40x40",
+   "domain": "gantry",
+   "desc": "RFID antenna arm 40x40 T-slot, L = ant_arm_len",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "ant_arm_w",
+    "ant_arm_len",
+    "pole_pitch",
+    "pole_slot"
+   ],
+   "ref": "include <gantry_params.scad>\ninclude <pf_common.scad>\ntslot(ant_arm_w, ant_arm_w, ant_arm_len, 40, 10);",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_antenna_arm_40x40.step",
+   "sources": [
+    "gantry_params.scad"
+   ],
+   "mat_key": "ant_arm",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_camera_arm_40x40",
+   "domain": "gantry",
+   "desc": "ANPR camera arm 40x40 T-slot, L = cam_arm_len_eff (250, file-local constant in gantry_camera_arm.scad)",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "ant_arm_w",
+    "cam_arm_len_eff",
+    "pole_pitch",
+    "pole_slot"
+   ],
+   "ref": "include <gantry_params.scad>\ninclude <pf_common.scad>\ntslot(40, 40, 250, 40, 10);",
+   "qty": 1,
+   "notes": "gantry_params.scad cam_arm_len = 300 is NOT used by the .scad model (it uses 250)",
+   "file": "gantry_camera_arm_40x40.step",
+   "sources": [
+    "gantry_camera_arm.scad:cam_arm_len_eff"
+   ],
+   "mat_key": "cam_arm",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "antenna_yoke",
+   "domain": "gantry",
+   "desc": "Antenna yoke, 5 mm 5052-H32, 2 x 90 deg bends R = t (bent state), pivot holes, tilt-lock arc slots",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "yoke_t",
+    "yoke_w",
+    "yoke_web_d",
+    "yoke_bend_r",
+    "pivot_d",
+    "pivot_drop",
+    "ant_arm_w",
+    "lock_r",
+    "lock_slot_w",
+    "tilt_min",
+    "tilt_max",
+    "web_hole_pitch",
+    "cheek_r",
+    "cheek_bot_c"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_antenna_bracket.scad>\nyoke();",
+   "qty": 1,
+   "notes": "",
+   "file": "antenna_yoke.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_antenna_bracket.scad:yoke,cheek_2d"
+   ],
+   "mat_key": "yoke",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "antenna_tilt_plate",
+   "domain": "gantry",
+   "desc": "Antenna tilt plate, 5 mm 5052-H32, face + 2 ears (sharp-cornered bends; bend radius only in the DXF flat)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "yoke_t",
+    "tp_w",
+    "tp_h",
+    "tp_off",
+    "reader_hole_pitch",
+    "pivot_d",
+    "lock_r",
+    "ear_half_h"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_antenna_bracket.scad>\ntilt_plate();",
+   "qty": 1,
+   "notes": "",
+   "file": "antenna_tilt_plate.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_antenna_bracket.scad:tilt_plate,ear_2d,tilt_plate_face_2d"
+   ],
+   "mat_key": "tilt",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_camera_adapter_plate",
+   "domain": "gantry",
+   "desc": "Camera adapter plate 120x80x5 with 2 slots, 3-hole PCD pattern and cable hole",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "cam_plate_l",
+    "cam_plate_w",
+    "cam_plate_t",
+    "cam_mount_pcd"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_camera_arm.scad>\nlinear_extrude(cam_plate_t) cam_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_camera_adapter_plate.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_camera_arm.scad:cam_plate_2d"
+   ],
+   "mat_key": "cam_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_sign_bracket",
+   "domain": "gantry",
+   "desc": "P10 sign bracket 200x80x3 (modelled FLAT as in the .scad; the 'Z-bend' mentioned in its comment is not modelled)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "sign_br_t",
+    "sign_br_l",
+    "sign_br_w"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_channel_cap_sign.scad>\nlinear_extrude(sign_br_t) sign_bracket_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_sign_bracket.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_channel_cap_sign.scad:sign_bracket_2d"
+   ],
+   "mat_key": "sign_br",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_edge_pole_bracket",
+   "domain": "gantry",
+   "desc": "Edge Node pole bracket 340x50x3 MS flat bar with 2 pole holes and 2 lug slots",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "edge_br_l",
+    "edge_br_w",
+    "edge_br_t",
+    "edge_lug_pitch"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_channel_cap_sign.scad>\nlinear_extrude(3) edge_bracket_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_edge_pole_bracket.step",
+   "sources": [
+    "gantry_channel_cap_sign.scad:edge_bracket_2d"
+   ],
+   "mat_key": "edge_br",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_pole_cap",
+   "domain": "gantry",
+   "desc": "Pole cap (FDM ASA) with drip slope and 4 clip ribs",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "pole_w",
+    "cap_wall",
+    "cap_h",
+    "cap_clear"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_channel_cap_sign.scad>\npole_cap();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_pole_cap.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_channel_cap_sign.scad:pole_cap"
+   ],
+   "mat_key": "pole_cap",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_cable_boot",
+   "domain": "gantry",
+   "desc": "Cable boot (FDM ASA): conduit to trunking transition (convex hull body, cavity, conduit bore)",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "pole_w",
+    "duct_w",
+    "duct_d",
+    "duct_z0",
+    "boot_h",
+    "conduit_d",
+    "bp_t"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_channel_cap_sign.scad>\ncable_boot_body_only();",
+   "qty": 1,
+   "notes": "Hull body is a faceted B-rep (128-gon for the conduit circle), as the .scad hull is faceted",
+   "file": "gantry_cable_boot.step",
+   "sources": [
+    "gantry_params.scad",
+    "gantry_channel_cap_sign.scad:cable_boot_body_only"
+   ],
+   "mat_key": "boot",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_cable_channel_envelope",
+   "domain": "gantry",
+   "desc": "Cable channel 40x25 PVC/ASA trunking incl. snap cover, cut to length (envelope)",
+   "kind": "bought_envelope",
+   "material": "PVC trunking (bought)",
+   "params": [
+    "duct_w",
+    "duct_d",
+    "duct_t",
+    "duct_z0",
+    "duct_z1",
+    "pole_w"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_channel_cap_sign.scad>\ncable_channel();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_cable_channel_envelope.step",
+   "sources": [
+    "gantry_channel_cap_sign.scad:cable_channel"
+   ],
+   "mat_key": "channel",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_conduit_envelope",
+   "domain": "gantry",
+   "desc": "Flexible conduit OD25 as a SOLID cylinder (envelope; the .scad also models it solid)",
+   "kind": "bought_envelope",
+   "material": "flexible conduit (bought)",
+   "params": [
+    "conduit_d",
+    "bp_t",
+    "grout_gap",
+    "duct_d",
+    "pole_w"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "no separate reference STL (module is shared with the boot)",
+   "file": "gantry_conduit_envelope.step",
+   "sources": [
+    "gantry_channel_cap_sign.scad:cable_boot"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "gantry_corner_bracket40_envelope",
+   "domain": "gantry",
+   "desc": "Cast 40-series corner bracket 40x35x4 with 3 mm rib (envelope)",
+   "kind": "bought_envelope",
+   "material": "cast Al (bought)",
+   "params": [],
+   "ref": "include <pf_common.scad>\ncorner_bracket40();",
+   "qty": 1,
+   "notes": "",
+   "file": "gantry_corner_bracket40_envelope.step",
+   "sources": [
+    "pf_common.scad:corner_bracket40"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "rfid_reader_envelope",
+   "domain": "gantry",
+   "desc": "UHF RFID reader envelope 260x260x60 (ASSUMED size) with M12 connector stub",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "rfid_w",
+    "rfid_h",
+    "rfid_t"
+   ],
+   "ref": "use <pf_bought.scad>\nrfid_reader();",
+   "qty": 1,
+   "notes": "",
+   "file": "rfid_reader_envelope.step",
+   "sources": [
+    "pf_bought.scad:rfid_reader"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "bullet_camera_envelope",
+   "domain": "gantry",
+   "desc": "ANPR bullet camera envelope 220x80x80 (ASSUMED size), unpitched, optical axis +x",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "cam_len",
+    "cam_dia",
+    "cam_knuckle"
+   ],
+   "ref": "use <pf_bought.scad>\nbullet_camera();",
+   "qty": 1,
+   "notes": "",
+   "file": "bullet_camera_envelope.step",
+   "sources": [
+    "pf_bought.scad:bullet_camera"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "bullet_camera_aimed_envelope",
+   "domain": "gantry",
+   "desc": "Camera envelope with ball-joint pitch cam_pitch applied (as mounted on the camera arm)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "cam_pitch",
+    "cam_len",
+    "cam_dia",
+    "cam_knuckle"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_camera_arm.scad>\nbullet_camera_aimed();",
+   "qty": 1,
+   "notes": "",
+   "file": "bullet_camera_aimed_envelope.step",
+   "sources": [
+    "gantry_camera_arm.scad:bullet_camera_aimed"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "p10_cabinet_tray_envelope",
+   "domain": "gantry",
+   "desc": "P10 cabinet tray 360x200x60, 3 mm walls/floor (envelope; the .scad lists it as bought 'cabinet')",
+   "kind": "bought_envelope",
+   "material": "Al 5052-H32 (sheet tray)",
+   "params": [
+    "sign_cab_w",
+    "sign_cab_h",
+    "sign_cab_d"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "p10_cabinet_tray_envelope.step",
+   "sources": [
+    "pf_bought.scad:p10_cabinet"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "p10_module_envelope",
+   "domain": "gantry",
+   "desc": "P10 LED module block 320x160x13 (the 512 pixel cylinders are omitted)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "p10_w",
+    "p10_h",
+    "p10_t"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "512 LED pixel cylinders (D5 x 1.6, 8-gons) omitted: +2.2 % of module volume in the .scad",
+   "file": "p10_module_envelope.step",
+   "sources": [
+    "pf_bought.scad:p10_module"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "p10_front_window_envelope",
+   "domain": "gantry",
+   "desc": "Cabinet front window 354x194x2, TRIMMED to the tray opening (the .scad plate is 360x200 and overlaps the walls)",
+   "kind": "bought_envelope",
+   "material": "polycarbonate (bought)",
+   "params": [
+    "sign_cab_w",
+    "sign_cab_h",
+    "sign_cab_d"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "no reference STL (trimmed deliberately to avoid body interference)",
+   "file": "p10_front_window_envelope.step",
+   "sources": [
+    "pf_bought.scad:p10_cabinet"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "p10_driver_psu_envelope",
+   "domain": "gantry",
+   "desc": "5 V LED driver PSU block 120x80x20",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "p10_driver_psu_envelope.step",
+   "sources": [
+    "pf_bought.scad:p10_cabinet"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_enclosure_base",
+   "domain": "edge",
+   "desc": "IP65 enclosure base 300x400x140 (bought PC blank + our machining: rim tongue, bosses, lugs, gland/vent holes, heat-sink window)",
+   "kind": "fabricated",
+   "material": "Polycarbonate (bought enclosure)",
+   "params": [
+    "enc_w",
+    "enc_h",
+    "enc_d",
+    "enc_lid_d",
+    "enc_wall",
+    "enc_r",
+    "lid_boss_d",
+    "lid_boss_in",
+    "tongue_w",
+    "tongue_h",
+    "bp_boss_d",
+    "bp_boss_h",
+    "bp_boss_dx",
+    "bp_boss_dy",
+    "mlug_w",
+    "mlug_x",
+    "mlug_y",
+    "gland_x",
+    "gland_m",
+    "vent_x",
+    "hs_cut_l",
+    "hs_cut_w",
+    "hs_y"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_enclosure.scad>\nenclosure_base();",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_enclosure_base.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_enclosure.scad:enclosure_base"
+   ],
+   "mat_key": "enc_base",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_enclosure_lid",
+   "domain": "edge",
+   "desc": "IP65 enclosure lid 300x400x40 with gasket groove, screw bosses and counterbored screw holes",
+   "kind": "fabricated",
+   "material": "Polycarbonate (bought enclosure)",
+   "params": [
+    "enc_w",
+    "enc_h",
+    "enc_lid_d",
+    "enc_wall",
+    "enc_r",
+    "groove_w",
+    "groove_d",
+    "lid_boss_d",
+    "lid_boss_in"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_enclosure.scad>\nenclosure_lid();",
+   "qty": 1,
+   "notes": "reference module enclosure_lid() also draws the gasket cord and the label plate (separate STEP parts)",
+   "file": "edge_enclosure_lid.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_enclosure.scad:enclosure_lid"
+   ],
+   "mat_key": "enc_lid",
+   "ref_fn": 128,
+   "ref_includes": [
+    "edge_lid_gasket_envelope",
+    "edge_label_plate"
+   ]
+  },
+  {
+   "id": "edge_lid_gasket_envelope",
+   "domain": "edge",
+   "desc": "Lid gasket cord as a rectangular-section ring 2.4 x 3.6 (the .scad models the cord this way)",
+   "kind": "bought_envelope",
+   "material": "EPDM/silicone cord (bought)",
+   "params": [
+    "gasket_d",
+    "groove_d",
+    "enc_w",
+    "enc_h",
+    "enc_wall",
+    "enc_r"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_lid_gasket_envelope.step",
+   "sources": [
+    "edge_enclosure.scad:enclosure_lid"
+   ],
+   "mat_key": "gasket",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_label_plate",
+   "domain": "edge",
+   "desc": "ParkFlow label plate 120x30x0.8 on the lid (cosmetic)",
+   "kind": "fabricated",
+   "material": "not specified in MATERIALS.md",
+   "params": [
+    "enc_h",
+    "enc_lid_d"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_label_plate.step",
+   "sources": [
+    "edge_enclosure.scad:enclosure_lid"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_mount_plate",
+   "domain": "edge",
+   "desc": "Internal mounting plate 260x360x3, laser cut (DXF edge_mount_plate)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "mp_w",
+    "mp_t",
+    "bp_boss_dx",
+    "bp_boss_dy",
+    "din_y",
+    "smps_x",
+    "smps_y",
+    "pi_x",
+    "pi_y",
+    "lc_x",
+    "lc_y",
+    "buck_x",
+    "buck_y"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_internals.scad>\nmount_plate();",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_mount_plate.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_internals.scad:mount_plate_2d"
+   ],
+   "mat_key": "mount_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_pi_tray",
+   "domain": "edge",
+   "desc": "Pi tray (FDM ASA) with 4 standoffs, edge rails, heat-set holes, airflow window",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "pitray_t",
+    "pi_standoff"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_internals.scad>\npi_tray();",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_pi_tray.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_internals.scad:pi_tray"
+   ],
+   "mat_key": "pi_tray",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_heat_spreader",
+   "domain": "edge",
+   "desc": "Heat spreader 100x70x5 + 23.5 mm bar 20x10 (bar length as assembled in internals())",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "spr_t",
+    "spr_l",
+    "spr_w",
+    "spr_bar_w",
+    "spr_bar_t"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_internals.scad>\nlinear_extrude(spr_t) heat_spreader_2d();\ntranslate([spr_l/2-5, -spr_bar_w/2, 0]) cube([23.5, spr_bar_w, spr_bar_t]);",
+   "qty": 1,
+   "notes": "reference wrapper re-states the bar cube of heat_spreader(); module also draws a pad",
+   "file": "edge_heat_spreader.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_internals.scad:heat_spreader,heat_spreader_2d"
+   ],
+   "mat_key": "spreader",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_thermal_pad_envelope",
+   "domain": "edge",
+   "desc": "Thermal pad 22x22x1.5",
+   "kind": "bought_envelope",
+   "material": "thermal pad (bought)",
+   "params": [],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_thermal_pad_envelope.step",
+   "sources": [
+    "edge_internals.scad:heat_spreader"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_sun_hood",
+   "domain": "edge",
+   "desc": "Sun hood 2 mm 5052: canopy + 2 side plates exactly as in sun_hood() (separate flat plates fused; the bends/flanges of a brake-formed hood are not modelled)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "enc_w",
+    "enc_h",
+    "enc_d",
+    "hood_gap",
+    "hood_t",
+    "hood_front"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_internals.scad>\nsun_hood();",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_sun_hood.step",
+   "sources": [
+    "edge_params.scad",
+    "edge_internals.scad:sun_hood"
+   ],
+   "mat_key": "hood",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_heat_sink_envelope",
+   "domain": "edge",
+   "desc": "External finned heat sink 200x150, base 6 + 18 fins 2x35 (bought extrusion, cut + drilled)",
+   "kind": "bought_envelope",
+   "material": "Al 6063-T5",
+   "params": [
+    "hs_base_l",
+    "hs_base_w",
+    "hs_base_t",
+    "hs_fin_n",
+    "hs_fin_t",
+    "hs_fin_h"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_heat_sink_envelope.step",
+   "sources": [
+    "edge_internals.scad:heat_sink"
+   ],
+   "mat_key": "heat_sink",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_sink_gasket_envelope",
+   "domain": "edge",
+   "desc": "Heat-sink window gasket (frame 4 mm wide, 1.5 thick)",
+   "kind": "bought_envelope",
+   "material": "EPDM sheet (bought)",
+   "params": [
+    "hs_cut_l",
+    "hs_cut_w"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_sink_gasket_envelope.step",
+   "sources": [
+    "edge_internals.scad:heat_sink"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_gland_M16_envelope",
+   "domain": "edge",
+   "desc": "Cable gland M16 envelope (thread, hex, cone), axis +z from wall face",
+   "kind": "bought_envelope",
+   "material": "Nylon PA66 (bought)",
+   "params": [
+    "gland_m"
+   ],
+   "ref": "include <pf_common.scad>\ngland(16);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_gland_M16_envelope.step",
+   "sources": [
+    "pf_common.scad:gland"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_gland_M20_envelope",
+   "domain": "edge",
+   "desc": "Cable gland M20 envelope (thread, hex, cone), axis +z from wall face",
+   "kind": "bought_envelope",
+   "material": "Nylon PA66 (bought)",
+   "params": [
+    "gland_m"
+   ],
+   "ref": "include <pf_common.scad>\ngland(20);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_gland_M20_envelope.step",
+   "sources": [
+    "pf_common.scad:gland"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_gland_M25_envelope",
+   "domain": "edge",
+   "desc": "Cable gland M25 envelope (thread, hex, cone), axis +z from wall face",
+   "kind": "bought_envelope",
+   "material": "Nylon PA66 (bought)",
+   "params": [
+    "gland_m"
+   ],
+   "ref": "include <pf_common.scad>\ngland(25);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_gland_M25_envelope.step",
+   "sources": [
+    "pf_common.scad:gland"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_vent_plug_envelope",
+   "domain": "edge",
+   "desc": "Pressure-equalisation vent as a D18 x 10 cylinder",
+   "kind": "bought_envelope",
+   "material": "ePTFE vent (bought)",
+   "params": [
+    "vent_x"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_vent_plug_envelope.step",
+   "sources": [
+    "edge_node_assembly.scad:edge_node"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "rpi5_envelope",
+   "domain": "edge",
+   "desc": "Raspberry Pi 5 envelope 85x56 + connectors + active cooler",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "pi_l",
+    "pi_w",
+    "pi_t",
+    "pi_hole_dx",
+    "pi_hole_dy"
+   ],
+   "ref": "use <pf_bought.scad>\nrpi5();",
+   "qty": 1,
+   "notes": "",
+   "file": "rpi5_envelope.step",
+   "sources": [
+    "pf_bought.scad:rpi5"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "ai_hat_envelope",
+   "domain": "edge",
+   "desc": "AI HAT+ (Hailo-8) envelope 65x56.5x1.6 + 22x22x3 module",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": "use <pf_bought.scad>\nai_hat();",
+   "qty": 1,
+   "notes": "",
+   "file": "ai_hat_envelope.step",
+   "sources": [
+    "pf_bought.scad:ai_hat"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "smps_lrs150_envelope",
+   "domain": "edge",
+   "desc": "Mean Well LRS-150-24 envelope 159x97x30 (vent slots, terminal block)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "smps_l",
+    "smps_w",
+    "smps_h"
+   ],
+   "ref": "use <pf_bought.scad>\nlrs150();",
+   "qty": 1,
+   "notes": "",
+   "file": "smps_lrs150_envelope.step",
+   "sources": [
+    "pf_bought.scad:lrs150"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "poe_switch_envelope",
+   "domain": "edge",
+   "desc": "DIN-rail PoE switch envelope 40x140x105 (ASSUMED class size)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "sw_l",
+    "sw_w",
+    "sw_h"
+   ],
+   "ref": "use <pf_bought.scad>\npoe_switch();",
+   "qty": 1,
+   "notes": "",
+   "file": "poe_switch_envelope.step",
+   "sources": [
+    "pf_bought.scad:poe_switch"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "lane_controller_pcb_envelope",
+   "domain": "edge",
+   "desc": "Lane Controller PCB 100x80x1.6 with component blocks",
+   "kind": "bought_envelope",
+   "material": "custom PCB (bought)",
+   "params": [
+    "lc_l",
+    "lc_w",
+    "lc_hole_in"
+   ],
+   "ref": "use <pf_bought.scad>\nlane_controller_pcb();",
+   "qty": 1,
+   "notes": "",
+   "file": "lane_controller_pcb_envelope.step",
+   "sources": [
+    "pf_bought.scad:lane_controller_pcb"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_din_rail_envelope",
+   "domain": "edge",
+   "desc": "35 mm top-hat DIN rail, length din_len",
+   "kind": "bought_envelope",
+   "material": "steel/Al DIN rail (bought)",
+   "params": [
+    "din_len"
+   ],
+   "ref": "include <edge_params.scad>\nuse <pf_bought.scad>\ndin_rail(din_len);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_din_rail_envelope.step",
+   "sources": [
+    "pf_bought.scad:din_rail"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_din_device_1mod_envelope",
+   "domain": "edge",
+   "desc": "DIN-rail modular device, 1 module(s) wide (MCB / SPD / terminal)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": "use <pf_bought.scad>\ndin_device(1, [1,1,1], 70);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_din_device_1mod_envelope.step",
+   "sources": [
+    "pf_bought.scad:din_device"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_din_device_2mod_envelope",
+   "domain": "edge",
+   "desc": "DIN-rail modular device, 2 module(s) wide (MCB / SPD / terminal)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": "use <pf_bought.scad>\ndin_device(2, [1,1,1], 70);",
+   "qty": 1,
+   "notes": "",
+   "file": "edge_din_device_2mod_envelope.step",
+   "sources": [
+    "pf_bought.scad:din_device"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_buck_module_envelope",
+   "domain": "edge",
+   "desc": "24 V to 5 V buck module envelope 30x60x18",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_buck_module_envelope.step",
+   "sources": [
+    "edge_internals.scad:internals"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "edge_wire_trunking_envelope",
+   "domain": "edge",
+   "desc": "Wiring trunking block 240x20x25 (solid envelope)",
+   "kind": "bought_envelope",
+   "material": "PVC trunking (bought)",
+   "params": [
+    "mp_w"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "edge_wire_trunking_envelope.step",
+   "sources": [
+    "edge_internals.scad:internals"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_base_plate",
+   "domain": "barrier",
+   "desc": "Housing base plate 360x310x8 (hs + 2 x hsg_bp_mx), 4 anchor holes D12, cable entry D40 (laser cut)",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "hs_x",
+    "hs_y",
+    "hsg_bp_t",
+    "hsg_bp_mx",
+    "anchor_d"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(hsg_bp_t) housing_base_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_base_plate.step",
+   "sources": [
+    "barrier_params.scad",
+    "barrier_parts.scad:housing_base_plate_2d"
+   ],
+   "mat_key": "bar_base",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_frame_post_20x20",
+   "domain": "barrier",
+   "desc": "Frame post 20x20 T-slot (generic profile), length hs_z - 2",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "frame_w",
+    "hs_z"
+   ],
+   "ref": "include <barrier_params.scad>\ninclude <pf_common.scad>\ntslot(frame_w, frame_w, hs_z - 2, 20, 6);",
+   "qty": 1,
+   "notes": "generic profile; MATERIALS/calcs use 0.5 kg/m",
+   "file": "barrier_frame_post_20x20.step",
+   "sources": [
+    "barrier_params.scad",
+    "pf_common.scad:tslot2d"
+   ],
+   "mat_key": "bar_frame",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_frame_rail_x_20x20",
+   "domain": "barrier",
+   "desc": "Frame rail along x, length hs_x - 2 frame_w",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "frame_w",
+    "hs_x"
+   ],
+   "ref": "include <barrier_params.scad>\ninclude <pf_common.scad>\ntslot(frame_w, frame_w, hs_x - 2*frame_w, 20, 6);",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_frame_rail_x_20x20.step",
+   "sources": [
+    "barrier_params.scad"
+   ],
+   "mat_key": "bar_frame",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_frame_rail_y_20x20",
+   "domain": "barrier",
+   "desc": "Frame rail along y, length hs_y - 2 frame_w",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "frame_w",
+    "hs_y"
+   ],
+   "ref": "include <barrier_params.scad>\ninclude <pf_common.scad>\ntslot(frame_w, frame_w, hs_y - 2*frame_w, 20, 6);",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_frame_rail_y_20x20.step",
+   "sources": [
+    "barrier_params.scad"
+   ],
+   "mat_key": "bar_frame",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_front_panel",
+   "domain": "barrier",
+   "desc": "Front skin 300x800x2 with shaft hole D30 and 2 bearing bolt holes (STEP frame: x across, y thickness, z up)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "hs_x",
+    "hs_z",
+    "panel_t",
+    "shaft_z",
+    "hsg_bp_t",
+    "shaft_d"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nrotate([90,0,0]) linear_extrude(panel_t) panel_front_2d();",
+   "qty": 1,
+   "notes": "in the .scad the panel sits at y = -hs_y/2 .. -hs_y/2+panel_t, i.e. INSIDE the frame envelope (overlaps posts/rails by 2 mm)",
+   "file": "barrier_front_panel.step",
+   "sources": [
+    "barrier_parts.scad:panel_front_2d"
+   ],
+   "mat_key": "bar_skins",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_back_panel",
+   "domain": "barrier",
+   "desc": "Back skin / access door 300x800x2 (plain, as in the .scad)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "hs_x",
+    "hs_z",
+    "panel_t"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_back_panel.step",
+   "sources": [
+    "barrier_parts.scad:housing_skins"
+   ],
+   "mat_key": "bar_skins",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_side_panel",
+   "domain": "barrier",
+   "desc": "Side skin 250x800x2 (x2, plain)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "hs_y",
+    "hs_z",
+    "panel_t"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_side_panel.step",
+   "sources": [
+    "barrier_parts.scad:housing_skins"
+   ],
+   "mat_key": "bar_skins",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_roof",
+   "domain": "barrier",
+   "desc": "Roof 320x280x3 (installed with 5 deg fall)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "hs_x",
+    "hs_y",
+    "roof_t"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_roof.step",
+   "sources": [
+    "barrier_parts.scad:housing_skins"
+   ],
+   "mat_key": "bar_skins",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_motor_plate",
+   "domain": "barrier",
+   "desc": "Motor plate 200x150x6 (gearmotor 4xM6 pattern, corner T-nut holes)",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "mplate_w",
+    "mplate_h",
+    "mplate_t",
+    "gm_shaft_off"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(mplate_t) motor_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_motor_plate.step",
+   "sources": [
+    "barrier_parts.scad:motor_plate_2d"
+   ],
+   "mat_key": "bar_motor_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_bearing_plate",
+   "domain": "barrier",
+   "desc": "Bearing plate 260x100x6",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "hs_x",
+    "frame_w",
+    "mplate_t",
+    "shaft_d"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(mplate_t) bearing_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_bearing_plate.step",
+   "sources": [
+    "barrier_parts.scad:bearing_plate_2d"
+   ],
+   "mat_key": "bar_bearing_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_stub_shaft",
+   "domain": "barrier",
+   "desc": "Stub shaft D20 (keyways NOT modelled in the shaft, as in the .scad), length from gm_face_y/hub_y",
+   "kind": "fabricated",
+   "material": "EN8 (080M40) steel",
+   "params": [
+    "shaft_d",
+    "gm_face_y",
+    "hub_t",
+    "hub_gap",
+    "panel_t",
+    "hs_y"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_stub_shaft.step",
+   "sources": [
+    "barrier_parts.scad:drive_train"
+   ],
+   "mat_key": "bar_shaft",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_hub",
+   "domain": "barrier",
+   "desc": "Hub D70x16 with tongue 90x60x12, tail stub, hinge bore, shear-pin bore, keyway (HUB-LOCAL frame)",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "hub_d",
+    "hub_t",
+    "tongue_l",
+    "tongue_t",
+    "tongue_w",
+    "hinge_r",
+    "hinge_d",
+    "shear_e",
+    "shear_d",
+    "shaft_d",
+    "cw_bar_w",
+    "cw_bar_t"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nhub();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_hub.step",
+   "sources": [
+    "barrier_parts.scad:hub"
+   ],
+   "mat_key": "bar_hub",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_limit_flag",
+   "domain": "barrier",
+   "desc": "Limit flag 3 mm",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "flag_r",
+    "flag_t"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(flag_t) limit_flag_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_limit_flag.step",
+   "sources": [
+    "barrier_parts.scad:limit_flag_2d"
+   ],
+   "mat_key": "bar_flag",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_carrier_plate",
+   "domain": "barrier",
+   "desc": "Breakaway carrier clevis plate 5 mm (x2): hinge M8, shear pin D5, clamp holes",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "carrier_l",
+    "carrier_w",
+    "carrier_t",
+    "hinge_r",
+    "hinge_d",
+    "shear_e",
+    "shear_d",
+    "clamp_pitch"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(carrier_t) carrier_plate_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_carrier_plate.step",
+   "sources": [
+    "barrier_parts.scad:carrier_plate_2d"
+   ],
+   "mat_key": "bar_carrier",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_shear_pin",
+   "domain": "barrier",
+   "desc": "Sacrificial shear pin D5, length tongue_w + 2 carrier_t + 6 (HUB-LOCAL frame, axis y)",
+   "kind": "fabricated",
+   "material": "Al 6061-T6",
+   "params": [
+    "shear_d",
+    "tongue_w",
+    "carrier_t",
+    "hinge_r",
+    "shear_e"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_shear_pin.step",
+   "sources": [
+    "barrier_parts.scad:carrier"
+   ],
+   "mat_key": "bar_pin",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_boom_tube",
+   "domain": "barrier",
+   "desc": "Boom: rect tube 60x30x1.5 (STEP frame: along +z, 60 along x), length boom_L - (hinge_r+60) - tip_cap_l",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "boom_h",
+    "boom_b",
+    "boom_t",
+    "boom_L",
+    "hinge_r",
+    "tip_cap_l"
+   ],
+   "ref": "include <barrier_params.scad>\ninclude <pf_common.scad>\nrhs(boom_h, boom_b, boom_t, 1065);",
+   "qty": 1,
+   "notes": "length 1065 mm; MATERIALS.md says L 1135",
+   "file": "barrier_boom_tube.step",
+   "sources": [
+    "barrier_parts.scad:boom"
+   ],
+   "mat_key": "bar_boom",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_boom_tip_cap",
+   "domain": "barrier",
+   "desc": "Boom tip cap (FDM ASA) = boom_tip_cap_print() of export_parts.scad (spigot + hollow nose)",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "boom_h",
+    "boom_b"
+   ],
+   "ref": "use <export_parts.scad>\nboom_tip_cap_print();",
+   "qty": 1,
+   "notes": "barrier_assembly.scad draws a DIFFERENT (solid, spigot-less) inline cap; the printed part is used here",
+   "file": "barrier_boom_tip_cap.step",
+   "sources": [
+    "export_parts.scad:boom_tip_cap_print"
+   ],
+   "mat_key": "bar_tipcap",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_cw_tail_bar",
+   "domain": "barrier",
+   "desc": "Counterweight tail bar 40x10 flat",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "cw_arm",
+    "cw_plate_x",
+    "hub_d",
+    "cw_bar_w",
+    "cw_bar_t"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_cw_tail_bar.step",
+   "sources": [
+    "barrier_parts.scad:counterweight"
+   ],
+   "mat_key": "bar_cw_bar",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_cw_plate",
+   "domain": "barrier",
+   "desc": "Counterweight plate 100x60x9.7 (cw_plate_t - 0.3 as modelled; MATERIALS says 10 mm), x cw_n",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "cw_plate_x",
+    "cw_plate_z",
+    "cw_plate_t",
+    "cw_n"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_cw_plate.step",
+   "sources": [
+    "barrier_parts.scad:counterweight"
+   ],
+   "mat_key": "bar_cw_plate",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_photo_post_foot",
+   "domain": "barrier",
+   "desc": "Photo-beam post foot plate 100x100x5",
+   "kind": "fabricated",
+   "material": "IS2062-E250 (MS)",
+   "params": [
+    "pb_foot"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(5) pb_foot_2d();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_photo_post_foot.step",
+   "sources": [
+    "barrier_parts.scad:pb_foot_2d"
+   ],
+   "mat_key": "bar_foot",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_photo_post_20x20",
+   "domain": "barrier",
+   "desc": "Photo-beam post 20x20 T-slot (generic profile) x pb_post_h",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [
+    "pb_post_h"
+   ],
+   "ref": "include <barrier_params.scad>\ninclude <pf_common.scad>\ntslot(20, 20, pb_post_h, 20, 6);",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_photo_post_20x20.step",
+   "sources": [
+    "barrier_parts.scad:photo_post"
+   ],
+   "mat_key": "bar_post",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_photo_post_cap",
+   "domain": "barrier",
+   "desc": "Photo-beam post cap (FDM ASA) = pb_post_cap_print()",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [],
+   "ref": "use <export_parts.scad>\npb_post_cap_print();",
+   "qty": 1,
+   "notes": "assembly .scad draws a solid 24x24x6 cap instead; printed part used here",
+   "file": "barrier_photo_post_cap.step",
+   "sources": [
+    "export_parts.scad:pb_post_cap_print"
+   ],
+   "mat_key": "bar_postcap",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_limit_sensor_bracket",
+   "domain": "barrier",
+   "desc": "Limit-sensor bracket 3 mm (stadium plate; no DXF exists for it)",
+   "kind": "fabricated",
+   "material": "Al 5052-H32",
+   "params": [
+    "lim_sw_r",
+    "shaft_d"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_limit_sensor_bracket.step",
+   "sources": [
+    "barrier_parts.scad:limit_sensors"
+   ],
+   "mat_key": "bar_sens_br",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_flange_bearing_envelope",
+   "domain": "barrier",
+   "desc": "2-bolt flange bearing envelope (SOLID, no bore - interferes with the shaft in the assembly)",
+   "kind": "bought_envelope",
+   "material": "bought (UCFL204 class)",
+   "params": [
+    "brg_flange"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nflange_bearing();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_flange_bearing_envelope.step",
+   "sources": [
+    "barrier_parts.scad:flange_bearing"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_gearmotor_envelope",
+   "domain": "barrier",
+   "desc": "24 V worm gearmotor envelope (ASSUMED 90x75x70 gearbox, D60x110 motor, D12 shaft with D-flat)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "gm_box_x",
+    "gm_box_y",
+    "gm_box_z",
+    "gm_motor_d",
+    "gm_motor_l",
+    "gm_shaft_d",
+    "gm_shaft_l",
+    "gm_shaft_off"
+   ],
+   "ref": "use <pf_bought.scad>\ngearmotor();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_gearmotor_envelope.step",
+   "sources": [
+    "pf_bought.scad:gearmotor"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_jaw_coupling_envelope",
+   "domain": "barrier",
+   "desc": "Jaw coupling D30x30 envelope (solid)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "coup_d",
+    "coup_l"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_jaw_coupling_envelope.step",
+   "sources": [
+    "barrier_parts.scad:drive_train"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_photo_head_envelope",
+   "domain": "barrier",
+   "desc": "M18 through-beam photo-electric head with nut and lens disc",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": "use <pf_bought.scad>\nphoto_head();",
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_photo_head_envelope.step",
+   "sources": [
+    "pf_bought.scad:photo_head"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "barrier_m12_inductive_sensor_envelope",
+   "domain": "barrier",
+   "desc": "M12 inductive proximity sensor envelope D12 x 45",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "barrier_m12_inductive_sensor_envelope.step",
+   "sources": [
+    "barrier_parts.scad:limit_sensors"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "occ_base",
+   "domain": "occupancy",
+   "desc": "Ceiling base cup D96x22 (FDM ASA): keyhole slots, cable entry, snap windows, ESP32 standoffs, key",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "oc_d",
+    "oc_wall",
+    "oc_base_h",
+    "oc_floor",
+    "oc_screw_pitch",
+    "oc_screw_d",
+    "oc_cable_d",
+    "snap_n",
+    "snap_w",
+    "lip_h",
+    "esp_standoff"
+   ],
+   "ref": "include <occupancy_params.scad>\nuse <occupancy_parts.scad>\noc_base();",
+   "qty": 1,
+   "notes": "the 'keyhole' counterbore in the .scad (z = 0.8..2.8) is an enclosed void 0.2 mm below the cup floor; reproduced as modelled",
+   "file": "occ_base.step",
+   "sources": [
+    "occupancy_params.scad",
+    "occupancy_parts.scad:oc_base"
+   ],
+   "mat_key": "occ_base",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "occ_cover",
+   "domain": "occupancy",
+   "desc": "Sensor cover shell D96x26 (FDM ASA): dome, spigot, 3 snap hooks, probe bore, LED window",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "oc_d",
+    "oc_wall",
+    "oc_cover_h",
+    "fit_clear",
+    "lip_h",
+    "snap_n",
+    "snap_w",
+    "snap_l",
+    "snap_t",
+    "snap_lip",
+    "probe_d",
+    "ring_od",
+    "ring_id"
+   ],
+   "ref": "include <occupancy_params.scad>\nuse <occupancy_parts.scad>\noc_cover();",
+   "qty": 1,
+   "notes": "MODEL ISSUE: in the .scad the probe clamp boss and the LED seat are NOT connected to this shell (3 separate solids); exported as 3 parts",
+   "file": "occ_cover.step",
+   "sources": [
+    "occupancy_params.scad",
+    "occupancy_parts.scad:oc_cover"
+   ],
+   "mat_key": "occ_cover",
+   "ref_fn": 128,
+   "ref_includes": [
+    "occ_probe_clamp_boss",
+    "occ_led_seat"
+   ]
+  },
+  {
+   "id": "occ_probe_clamp_boss",
+   "domain": "occupancy",
+   "desc": "Probe clamp boss D42/D34.4 x 12 with 2 mm slit (floating in the .scad cover - see occ_cover notes)",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "probe_d",
+    "oc_cover_h"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "occ_probe_clamp_boss.step",
+   "sources": [
+    "occupancy_parts.scad:oc_cover"
+   ],
+   "mat_key": "occ_cover",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "occ_led_seat",
+   "domain": "occupancy",
+   "desc": "LED ring seat D54/D48 x 1.5 (floating in the .scad cover - see occ_cover notes)",
+   "kind": "fabricated",
+   "material": "ASA (FDM)",
+   "params": [
+    "ring_od",
+    "oc_cover_h"
+   ],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "occ_led_seat.step",
+   "sources": [
+    "occupancy_parts.scad:oc_cover"
+   ],
+   "mat_key": "occ_cover",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "occ_diffuser",
+   "domain": "occupancy",
+   "desc": "Diffuser ring D53.6 x 3 (natural PETG)",
+   "kind": "fabricated",
+   "material": "PETG (natural)",
+   "params": [
+    "ring_od",
+    "ring_id",
+    "diffuser_t"
+   ],
+   "ref": "include <occupancy_params.scad>\nuse <occupancy_parts.scad>\noc_diffuser();",
+   "qty": 1,
+   "notes": "",
+   "file": "occ_diffuser.step",
+   "sources": [
+    "occupancy_parts.scad:oc_diffuser"
+   ],
+   "mat_key": "occ_diffuser",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "esp32c3_board_envelope",
+   "domain": "occupancy",
+   "desc": "ESP32-C3 board envelope 48x26 (ASSUMED DevKitM-1 class)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [],
+   "ref": "use <pf_bought.scad>\nesp32c3_board();",
+   "qty": 1,
+   "notes": "",
+   "file": "esp32c3_board_envelope.step",
+   "sources": [
+    "pf_bought.scad:esp32c3_board"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "a02yyuw_ultrasonic_envelope",
+   "domain": "occupancy",
+   "desc": "DFRobot A02YYUW envelope (ASSUMED: probe D34x26 + 36x42x18 body; MEASURE the real part)",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "a02_probe_d",
+    "a02_probe_l",
+    "a02_body_w",
+    "a02_body_l",
+    "a02_body_h"
+   ],
+   "ref": "use <pf_bought.scad>\na02yyuw();",
+   "qty": 1,
+   "notes": "",
+   "file": "a02yyuw_ultrasonic_envelope.step",
+   "sources": [
+    "pf_bought.scad:a02yyuw"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "ws2812_ring_envelope",
+   "domain": "occupancy",
+   "desc": "WS2812B 12-LED ring envelope D50/D36",
+   "kind": "bought_envelope",
+   "material": "bought",
+   "params": [
+    "ring_od",
+    "ring_id"
+   ],
+   "ref": "include <occupancy_params.scad>\nuse <pf_bought.scad>\nws2812_ring(ring_od, ring_id);",
+   "qty": 1,
+   "notes": "",
+   "file": "ws2812_ring_envelope.step",
+   "sources": [
+    "pf_bought.scad:ws2812_ring"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "occ_cable_grommet_envelope",
+   "domain": "occupancy",
+   "desc": "Cable grommet D12x6",
+   "kind": "bought_envelope",
+   "material": "rubber (bought)",
+   "params": [],
+   "ref": null,
+   "qty": 1,
+   "notes": "",
+   "file": "occ_cable_grommet_envelope.step",
+   "sources": [
+    "occupancy_node_assembly.scad:oc_assy"
+   ],
+   "mat_key": null,
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "lane_rig_post_40x40",
+   "domain": "lane",
+   "desc": "Demo ceiling-rig post 40x40 x 2400 (generic profile)",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [],
+   "ref": "include <pf_common.scad>\ntslot(40, 40, 2400, 40, 10);",
+   "qty": 1,
+   "notes": "",
+   "file": "lane_rig_post_40x40.step",
+   "sources": [
+    "lane_layout.scad:layout"
+   ],
+   "mat_key": "rig",
+   "ref_fn": 128,
+   "ref_includes": []
+  },
+  {
+   "id": "lane_rig_crossbar_40x40",
+   "domain": "lane",
+   "desc": "Demo ceiling-rig cross-bar 40x40 x 700 (generic profile)",
+   "kind": "fabricated",
+   "material": "Al 6063-T5",
+   "params": [],
+   "ref": "include <pf_common.scad>\ntslot(40, 40, 700, 40, 10);",
+   "qty": 1,
+   "notes": "",
+   "file": "lane_rig_crossbar_40x40.step",
+   "sources": [
+    "lane_layout.scad:layout"
+   ],
+   "mat_key": "rig",
+   "ref_fn": 128,
+   "ref_includes": []
+  }
+ ],
+ "assemblies": [
+  {
+   "id": "gantry_base_weldment_assy",
+   "domain": "gantry",
+   "desc": "Base weldment as an assembly of its 9 laser-cut plates (unwelded bodies)",
+   "params": [
+    "bp_t",
+    "sock_clear",
+    "sock_t",
+    "gus_n"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_base_weldment.scad>\nbase_weldment(false);",
+   "notes": "",
+   "file": "gantry_base_weldment_assy.step",
+   "sources": [
+    "gantry_base_weldment.scad:base_weldment"
+   ],
+   "ref_note": "",
+   "ref_fn": 48,
+   "contents": {
+    "gantry_base_plate": 1,
+    "gantry_socket_cheek_long": 2,
+    "gantry_socket_cheek_short": 2,
+    "gantry_gusset": 4
+   }
+  },
+  {
+   "id": "antenna_bracket_assy",
+   "domain": "gantry",
+   "desc": "Yoke + tilt plate at ant_tilt about the pivot axis (pivot hardware excluded)",
+   "params": [
+    "ant_tilt"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_antenna_bracket.scad>\nyoke();\nrotate([ant_tilt,0,0]) tilt_plate();",
+   "notes": "",
+   "file": "antenna_bracket_assy.step",
+   "sources": [
+    "gantry_antenna_bracket.scad"
+   ],
+   "ref_note": "",
+   "ref_fn": 48,
+   "contents": {
+    "antenna_yoke": 1,
+    "antenna_tilt_plate": 1
+   }
+  },
+  {
+   "id": "gantry_p10_sign_cabinet_assy",
+   "domain": "gantry",
+   "desc": "P10 sign cabinet envelope assembly (tray, LED module block, front window, driver PSU)",
+   "params": [
+    "sign_cab_w",
+    "sign_cab_h",
+    "sign_cab_d",
+    "p10_w",
+    "p10_h",
+    "p10_t"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <pf_bought.scad>\np10_cabinet(sign_cab_w, sign_cab_h, sign_cab_d);",
+   "notes": "",
+   "file": "gantry_p10_sign_cabinet_assy.step",
+   "sources": [
+    "pf_bought.scad:p10_cabinet"
+   ],
+   "ref_note": "reference STL includes 512 LED pixels and the full-size front plate overlapping the walls",
+   "ref_fn": 48,
+   "contents": {
+    "p10_cabinet_tray_envelope": 1,
+    "p10_module_envelope": 1,
+    "p10_front_window_envelope": 1,
+    "p10_driver_psu_envelope": 1
+   }
+  },
+  {
+   "id": "gantry_antenna_arm_assy",
+   "domain": "gantry",
+   "desc": "RFID antenna arm + 2 corner brackets + yoke + tilt plate + reader envelope, in the POLE frame",
+   "params": [
+    "ant_z",
+    "ant_arm_len",
+    "pivot_drop",
+    "ant_tilt",
+    "yoke_w",
+    "tp_off"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_antenna_bracket.scad>\nantenna_bracket_assy(ant_tilt, 0);",
+   "notes": "",
+   "file": "gantry_antenna_arm_assy.step",
+   "sources": [
+    "gantry_antenna_bracket.scad:antenna_bracket_assy"
+   ],
+   "ref_note": "reference STL also contains the M8 pivot bolts and nylon spacers (hardware, not in STEP)",
+   "ref_fn": 48,
+   "contents": {
+    "gantry_antenna_arm_40x40": 1,
+    "gantry_corner_bracket40_envelope": 2,
+    "antenna_yoke": 1,
+    "antenna_tilt_plate": 1,
+    "rfid_reader_envelope": 1
+   }
+  },
+  {
+   "id": "gantry_camera_arm_assy",
+   "domain": "gantry",
+   "desc": "Camera arm + 2 corner brackets + adapter plate + aimed camera envelope, in the POLE frame",
+   "params": [
+    "cam_z",
+    "cam_arm_len_eff",
+    "cam_plate_overhang",
+    "cam_pitch",
+    "cam_yaw"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_camera_arm.scad>\ncamera_arm_assy(0);",
+   "notes": "",
+   "file": "gantry_camera_arm_assy.step",
+   "sources": [
+    "gantry_camera_arm.scad:camera_arm_assy"
+   ],
+   "ref_note": "",
+   "ref_fn": 48,
+   "contents": {
+    "gantry_camera_arm_40x40": 1,
+    "gantry_corner_bracket40_envelope": 2,
+    "gantry_camera_adapter_plate": 1,
+    "bullet_camera_aimed_envelope": 1
+   }
+  },
+  {
+   "id": "edge_internals_assy",
+   "domain": "edge",
+   "desc": "Populated internal mounting plate (plate-local frame, z = component side). Fasteners, standoffs excluded.",
+   "params": [
+    "mp_w",
+    "mp_t",
+    "din_y",
+    "smps_x",
+    "pi_x",
+    "pi_y",
+    "lc_x",
+    "lc_y",
+    "pi_standoff",
+    "lc_standoff"
+   ],
+   "ref": "include <edge_params.scad>\nuse <edge_internals.scad>\ninternals(0);",
+   "notes": "",
+   "file": "edge_internals_assy.step",
+   "sources": [
+    "edge_internals.scad:internals"
+   ],
+   "ref_note": "reference STL also contains the Pi hex spacers and the 4 Lane Controller brass standoffs (hardware, not in STEP)",
+   "ref_fn": 48,
+   "contents": {
+    "edge_mount_plate": 1,
+    "edge_din_rail_envelope": 1,
+    "edge_din_device_2mod_envelope": 2,
+    "edge_din_device_1mod_envelope": 7,
+    "poe_switch_envelope": 1,
+    "smps_lrs150_envelope": 1,
+    "edge_buck_module_envelope": 1,
+    "edge_pi_tray": 1,
+    "rpi5_envelope": 1,
+    "ai_hat_envelope": 1,
+    "edge_heat_spreader": 1,
+    "edge_thermal_pad_envelope": 1,
+    "lane_controller_pcb_envelope": 1,
+    "edge_wire_trunking_envelope": 1
+   }
+  },
+  {
+   "id": "edge_node_assy",
+   "domain": "edge",
+   "desc": "Edge Node: enclosure base + lid + gasket, populated plate, heat sink, glands, vent, sun hood (edge frame, explode = 0)",
+   "params": [
+    "enc_w",
+    "enc_h",
+    "enc_d",
+    "enc_lid_d",
+    "bp_boss_h",
+    "hs_y"
+   ],
+   "ref": "use <edge_node_assembly.scad>\nedge_node(0, 1, 1);",
+   "notes": "",
+   "file": "edge_node_assy.step",
+   "sources": [
+    "edge_node_assembly.scad:edge_node"
+   ],
+   "ref_note": "reference STL also contains Pi/LC hex standoffs",
+   "ref_fn": 48,
+   "contents": {
+    "edge_enclosure_base": 1,
+    "edge_mount_plate": 1,
+    "edge_din_rail_envelope": 1,
+    "edge_din_device_2mod_envelope": 2,
+    "edge_din_device_1mod_envelope": 7,
+    "poe_switch_envelope": 1,
+    "smps_lrs150_envelope": 1,
+    "edge_buck_module_envelope": 1,
+    "edge_pi_tray": 1,
+    "rpi5_envelope": 1,
+    "ai_hat_envelope": 1,
+    "edge_heat_spreader": 1,
+    "edge_thermal_pad_envelope": 1,
+    "lane_controller_pcb_envelope": 1,
+    "edge_wire_trunking_envelope": 1,
+    "edge_enclosure_lid": 1,
+    "edge_lid_gasket_envelope": 1,
+    "edge_label_plate": 1,
+    "edge_heat_sink_envelope": 1,
+    "edge_sink_gasket_envelope": 1,
+    "edge_gland_M25_envelope": 1,
+    "edge_gland_M20_envelope": 3,
+    "edge_gland_M16_envelope": 1,
+    "edge_vent_plug_envelope": 1,
+    "edge_sun_hood": 1
+   }
+  },
+  {
+   "id": "gantry_assembly",
+   "domain": "gantry",
+   "desc": "Lane gantry: weldment, pole, cap, antenna arm + yoke + tilt plate + reader, camera arm, cable channel/boot, P10 sign + brackets, Edge Node on pole (explode = 0; plinth, anchors, bolts excluded)",
+   "params": [
+    "pole_len",
+    "ant_z",
+    "cam_z",
+    "sign_z",
+    "edge_z",
+    "edge_standoff"
+   ],
+   "ref": "include <gantry_params.scad>\nuse <gantry_assembly.scad>\ngantry(0, 1, 0);",
+   "notes": "",
+   "file": "gantry_assembly.step",
+   "sources": [
+    "gantry_assembly.scad:gantry"
+   ],
+   "ref_note": "reference STL additionally contains anchors, cross bolts, pivot bolts and conduit hardware; STEP has none",
+   "ref_fn": 48,
+   "contents": {
+    "gantry_base_plate": 1,
+    "gantry_socket_cheek_long": 2,
+    "gantry_socket_cheek_short": 2,
+    "gantry_gusset": 4,
+    "gantry_pole_80x80": 1,
+    "gantry_pole_cap": 1,
+    "gantry_antenna_arm_40x40": 1,
+    "gantry_corner_bracket40_envelope": 4,
+    "antenna_yoke": 1,
+    "antenna_tilt_plate": 1,
+    "rfid_reader_envelope": 1,
+    "gantry_camera_arm_40x40": 1,
+    "gantry_camera_adapter_plate": 1,
+    "bullet_camera_aimed_envelope": 1,
+    "gantry_cable_channel_envelope": 1,
+    "gantry_cable_boot": 1,
+    "gantry_conduit_envelope": 1,
+    "gantry_sign_bracket": 2,
+    "p10_cabinet_tray_envelope": 1,
+    "p10_module_envelope": 1,
+    "p10_front_window_envelope": 1,
+    "p10_driver_psu_envelope": 1,
+    "gantry_edge_pole_bracket": 2,
+    "edge_enclosure_base": 1,
+    "edge_mount_plate": 1,
+    "edge_din_rail_envelope": 1,
+    "edge_din_device_2mod_envelope": 2,
+    "edge_din_device_1mod_envelope": 7,
+    "poe_switch_envelope": 1,
+    "smps_lrs150_envelope": 1,
+    "edge_buck_module_envelope": 1,
+    "edge_pi_tray": 1,
+    "rpi5_envelope": 1,
+    "ai_hat_envelope": 1,
+    "edge_heat_spreader": 1,
+    "edge_thermal_pad_envelope": 1,
+    "lane_controller_pcb_envelope": 1,
+    "edge_wire_trunking_envelope": 1,
+    "edge_enclosure_lid": 1,
+    "edge_lid_gasket_envelope": 1,
+    "edge_label_plate": 1,
+    "edge_heat_sink_envelope": 1,
+    "edge_sink_gasket_envelope": 1,
+    "edge_gland_M25_envelope": 1,
+    "edge_gland_M20_envelope": 3,
+    "edge_gland_M16_envelope": 1,
+    "edge_vent_plug_envelope": 1,
+    "edge_sun_hood": 1
+   }
+  },
+  {
+   "id": "barrier_housing_assy",
+   "domain": "barrier",
+   "desc": "Housing: base plate, 12 frame extrusions (4 posts + 8 rails), 4 skins, roof (hazard-band decals, anchor nuts excluded)",
+   "params": [
+    "hs_x",
+    "hs_y",
+    "hs_z",
+    "hsg_bp_t",
+    "frame_w",
+    "panel_t",
+    "roof_t"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlinear_extrude(hsg_bp_t) housing_base_plate_2d();\nhousing_frame();\nhousing_skins();",
+   "notes": "",
+   "file": "barrier_housing_assy.step",
+   "sources": [
+    "barrier_assembly.scad:barrier"
+   ],
+   "ref_note": "reference STL also contains 8 hazard-band decal strips 0.5 mm thick",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_base_plate": 1,
+    "barrier_frame_post_20x20": 4,
+    "barrier_frame_rail_x_20x20": 4,
+    "barrier_frame_rail_y_20x20": 4,
+    "barrier_front_panel": 1,
+    "barrier_back_panel": 1,
+    "barrier_side_panel": 2,
+    "barrier_roof": 1
+   }
+  },
+  {
+   "id": "barrier_drive_train_assy",
+   "domain": "barrier",
+   "desc": "Drive train: motor plate, gearmotor, coupling, bearing plate, 2 flange bearings, stub shaft (world frame)",
+   "params": [
+    "shaft_z",
+    "gm_face_y",
+    "brg_plate_y",
+    "mplate_t"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\ndrive_train(0);",
+   "notes": "",
+   "file": "barrier_drive_train_assy.step",
+   "sources": [
+    "barrier_parts.scad:drive_train"
+   ],
+   "ref_note": "",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_motor_plate": 1,
+    "barrier_gearmotor_envelope": 1,
+    "barrier_jaw_coupling_envelope": 1,
+    "barrier_bearing_plate": 1,
+    "barrier_flange_bearing_envelope": 2,
+    "barrier_stub_shaft": 1
+   }
+  },
+  {
+   "id": "barrier_rotor_assy",
+   "domain": "barrier",
+   "desc": "Rotating group in HUB-LOCAL frame (boom_angle = 0): hub, flag, carrier, shear pin, boom, tip cap, counterweight",
+   "params": [
+    "boom_L",
+    "hinge_r",
+    "cw_n",
+    "cw_arm"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nrotor(0);",
+   "notes": "",
+   "file": "barrier_rotor_assy.step",
+   "sources": [
+    "barrier_parts.scad:rotor"
+   ],
+   "ref_note": "reference STL also contains the M8 hinge bolt, 2 M6 clamp bolts, 2 M8 counterweight studs, red tape bands and a different (solid) inline tip cap",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_hub": 1,
+    "barrier_limit_flag": 1,
+    "barrier_carrier_plate": 2,
+    "barrier_shear_pin": 1,
+    "barrier_boom_tube": 1,
+    "barrier_boom_tip_cap": 1,
+    "barrier_cw_tail_bar": 1,
+    "barrier_cw_plate": 7
+   }
+  },
+  {
+   "id": "barrier_limit_sensors_assy",
+   "domain": "barrier",
+   "desc": "Two M12 inductive sensors + bracket (hub-local frame)",
+   "params": [
+    "lim_sw_r",
+    "hub_t",
+    "flag_t"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nlimit_sensors();",
+   "notes": "",
+   "file": "barrier_limit_sensors_assy.step",
+   "sources": [
+    "barrier_parts.scad:limit_sensors"
+   ],
+   "ref_note": "",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_m12_inductive_sensor_envelope": 2,
+    "barrier_limit_sensor_bracket": 1
+   }
+  },
+  {
+   "id": "barrier_photo_post_assy",
+   "domain": "barrier",
+   "desc": "Photo-beam post (emitter side, local frame, dir = +1): foot, post, cap, M18 head",
+   "params": [
+    "pb_post_h",
+    "pb_z",
+    "pb_foot"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_parts.scad>\nphoto_post(1, 0);",
+   "notes": "",
+   "file": "barrier_photo_post_assy.step",
+   "sources": [
+    "barrier_parts.scad:photo_post"
+   ],
+   "ref_note": "reference photo_post() draws a solid 24x24x6 cap instead of the printed hollow cap",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_photo_post_foot": 1,
+    "barrier_photo_post_20x20": 1,
+    "barrier_photo_post_cap": 1,
+    "barrier_photo_head_envelope": 1
+   }
+  },
+  {
+   "id": "barrier_assembly",
+   "domain": "barrier",
+   "desc": "Demo boom barrier: housing, drive train, rotor (boom_angle from params), limit sensors, photo-beam posts at hs_x/2+60 and pb_x2",
+   "params": [
+    "boom_angle",
+    "pb_x2",
+    "pb_dy",
+    "pb_z"
+   ],
+   "ref": "include <barrier_params.scad>\nuse <barrier_assembly.scad>\nbarrier(0, boom_angle, 0);",
+   "notes": "",
+   "file": "barrier_assembly.step",
+   "sources": [
+    "barrier_assembly.scad:barrier"
+   ],
+   "ref_note": "reference STL additionally has anchor nuts, hinge/clamp bolts, studs, decals, tape bands, beam line, solid inline caps",
+   "ref_fn": 48,
+   "contents": {
+    "barrier_base_plate": 1,
+    "barrier_frame_post_20x20": 4,
+    "barrier_frame_rail_x_20x20": 4,
+    "barrier_frame_rail_y_20x20": 4,
+    "barrier_front_panel": 1,
+    "barrier_back_panel": 1,
+    "barrier_side_panel": 2,
+    "barrier_roof": 1,
+    "barrier_motor_plate": 1,
+    "barrier_gearmotor_envelope": 1,
+    "barrier_jaw_coupling_envelope": 1,
+    "barrier_bearing_plate": 1,
+    "barrier_flange_bearing_envelope": 2,
+    "barrier_stub_shaft": 1,
+    "barrier_hub": 1,
+    "barrier_limit_flag": 1,
+    "barrier_carrier_plate": 2,
+    "barrier_shear_pin": 1,
+    "barrier_boom_tube": 1,
+    "barrier_boom_tip_cap": 1,
+    "barrier_cw_tail_bar": 1,
+    "barrier_cw_plate": 7,
+    "barrier_m12_inductive_sensor_envelope": 2,
+    "barrier_limit_sensor_bracket": 1,
+    "barrier_photo_post_foot": 2,
+    "barrier_photo_post_20x20": 2,
+    "barrier_photo_post_cap": 2,
+    "barrier_photo_head_envelope": 2
+   }
+  },
+  {
+   "id": "occupancy_node_assy",
+   "domain": "occupancy",
+   "desc": "Occupancy node, base-on-z=0 frame (as oc_assy()): base, cover, diffuser, ESP32-C3, A02YYUW, LED ring, grommet (M5 screws excluded)",
+   "params": [
+    "oc_d",
+    "oc_base_h",
+    "oc_cover_h",
+    "oc_floor",
+    "esp_standoff"
+   ],
+   "ref": "use <occupancy_node_assembly.scad>\noc_assy(0);",
+   "notes": "",
+   "file": "occupancy_node_assy.step",
+   "sources": [
+    "occupancy_node_assembly.scad:oc_assy"
+   ],
+   "ref_note": "reference STL also contains the 2 M5 countersunk screws",
+   "ref_fn": 48,
+   "contents": {
+    "occ_base": 1,
+    "esp32c3_board_envelope": 1,
+    "occ_cable_grommet_envelope": 1,
+    "occ_cover": 1,
+    "occ_probe_clamp_boss": 1,
+    "occ_led_seat": 1,
+    "a02yyuw_ultrasonic_envelope": 1,
+    "ws2812_ring_envelope": 1,
+    "occ_diffuser": 1
+   }
+  },
+  {
+   "id": "lane_layout_assy",
+   "domain": "lane",
+   "desc": "Lane layout 3.5 x 8 m: gantry (mirrored in x as in the .scad), boom barrier (photo-beam span 3600), occupancy demo rig. Context (asphalt, kerbs, paint, car, zones) excluded.",
+   "params": [
+    "lane_w",
+    "island_w",
+    "island_h",
+    "pole_y",
+    "bar_y",
+    "boom_ang",
+    "grout_gap"
+   ],
+   "ref": "include <gantry_params.scad>\ninclude <pf_common.scad>\nuse <gantry_assembly.scad>\nuse <barrier_assembly.scad>\nuse <occupancy_node_assembly.scad>\ntranslate([3800, 5200, 175]) mirror([1,0,0]) gantry(0,1,0);\ntranslate([3800, 5700, 150]) rotate([0,0,180]) barrier_core(0);\ntranslate([-300, 6800, 150]) { tslot(40,40,2400,40,10);\n  translate([0,0,2400]) rotate([0,90,0]) translate([0,0,-20]) tslot(40,40,700,40,10);\n  translate([600,0,2380]) rotate([180,0,0]) oc_assy(0); }\n",
+   "notes": "",
+   "file": "lane_layout_assy.step",
+   "sources": [
+    "lane_layout.scad:layout"
+   ],
+   "ref_note": "reference STL = the same three layout() placements run through OpenSCAD (hardware included in reference only). The gantry is MIRRORED (x -> -x) exactly as in the .scad, so handed parts are mirror-image copies.",
+   "ref_fn": 40,
+   "contents": {
+    "gantry_base_plate": 1,
+    "gantry_socket_cheek_long": 2,
+    "gantry_socket_cheek_short": 2,
+    "gantry_gusset": 4,
+    "gantry_pole_80x80": 1,
+    "gantry_pole_cap": 1,
+    "gantry_antenna_arm_40x40": 1,
+    "gantry_corner_bracket40_envelope": 4,
+    "antenna_yoke": 1,
+    "antenna_tilt_plate": 1,
+    "rfid_reader_envelope": 1,
+    "gantry_camera_arm_40x40": 1,
+    "gantry_camera_adapter_plate": 1,
+    "bullet_camera_aimed_envelope": 1,
+    "gantry_cable_channel_envelope": 1,
+    "gantry_cable_boot": 1,
+    "gantry_conduit_envelope": 1,
+    "gantry_sign_bracket": 2,
+    "p10_cabinet_tray_envelope": 1,
+    "p10_module_envelope": 1,
+    "p10_front_window_envelope": 1,
+    "p10_driver_psu_envelope": 1,
+    "gantry_edge_pole_bracket": 2,
+    "edge_enclosure_base": 1,
+    "edge_mount_plate": 1,
+    "edge_din_rail_envelope": 1,
+    "edge_din_device_2mod_envelope": 2,
+    "edge_din_device_1mod_envelope": 7,
+    "poe_switch_envelope": 1,
+    "smps_lrs150_envelope": 1,
+    "edge_buck_module_envelope": 1,
+    "edge_pi_tray": 1,
+    "rpi5_envelope": 1,
+    "ai_hat_envelope": 1,
+    "edge_heat_spreader": 1,
+    "edge_thermal_pad_envelope": 1,
+    "lane_controller_pcb_envelope": 1,
+    "edge_wire_trunking_envelope": 1,
+    "edge_enclosure_lid": 1,
+    "edge_lid_gasket_envelope": 1,
+    "edge_label_plate": 1,
+    "edge_heat_sink_envelope": 1,
+    "edge_sink_gasket_envelope": 1,
+    "edge_gland_M25_envelope": 1,
+    "edge_gland_M20_envelope": 3,
+    "edge_gland_M16_envelope": 1,
+    "edge_vent_plug_envelope": 1,
+    "edge_sun_hood": 1,
+    "barrier_base_plate": 1,
+    "barrier_frame_post_20x20": 4,
+    "barrier_frame_rail_x_20x20": 4,
+    "barrier_frame_rail_y_20x20": 4,
+    "barrier_front_panel": 1,
+    "barrier_back_panel": 1,
+    "barrier_side_panel": 2,
+    "barrier_roof": 1,
+    "barrier_motor_plate": 1,
+    "barrier_gearmotor_envelope": 1,
+    "barrier_jaw_coupling_envelope": 1,
+    "barrier_bearing_plate": 1,
+    "barrier_flange_bearing_envelope": 2,
+    "barrier_stub_shaft": 1,
+    "barrier_hub": 1,
+    "barrier_limit_flag": 1,
+    "barrier_carrier_plate": 2,
+    "barrier_shear_pin": 1,
+    "barrier_boom_tube": 1,
+    "barrier_boom_tip_cap": 1,
+    "barrier_cw_tail_bar": 1,
+    "barrier_cw_plate": 7,
+    "barrier_m12_inductive_sensor_envelope": 2,
+    "barrier_limit_sensor_bracket": 1,
+    "barrier_photo_post_foot": 2,
+    "barrier_photo_post_20x20": 2,
+    "barrier_photo_post_cap": 2,
+    "barrier_photo_head_envelope": 2,
+    "lane_rig_post_40x40": 1,
+    "lane_rig_crossbar_40x40": 1,
+    "occ_base": 1,
+    "esp32c3_board_envelope": 1,
+    "occ_cable_grommet_envelope": 1,
+    "occ_cover": 1,
+    "occ_probe_clamp_boss": 1,
+    "occ_led_seat": 1,
+    "a02yyuw_ultrasonic_envelope": 1,
+    "ws2812_ring_envelope": 1,
+    "occ_diffuser": 1
+   }
+  }
+ ]
+}
